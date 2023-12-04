@@ -89,7 +89,7 @@ To run the project, execute the following commands:
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/faisal-mumtaz-514a221a6/)
 
 
-￼ **Anyars Yussif**
+👤 **Anyars Yussif**
 
 - GitHub: [@anyars-encarta](https://github.com/anyars-encarta)
 - Twitter: [@anyarsencarta](https://twitter.com/anyarsencarta)

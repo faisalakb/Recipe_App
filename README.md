@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+ **Kudzai Munyaradzi Sungai**
+
+* GitHub: [@paulshaun-kdtk](https://github.com/paulshaun-kdtk)
+* Twitter: [@paulshaun](https://twitter.com/ShaunPa30032006)
+* LinkedIn: [LinkedIn](https://www.linkedin.com/in/shaun-sungai-b54339263/)

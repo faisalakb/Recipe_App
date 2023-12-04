@@ -88,7 +88,16 @@ To run the project, execute the following commands:
 - Twitter: [@faisalakb786](https://twitter.com/Faisalakb786)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/faisal-mumtaz-514a221a6/)
 
+
+￼ **Anyars Yussif**
+
+- GitHub: [@anyars-encarta](https://github.com/anyars-encarta)
+- Twitter: [@anyarsencarta](https://twitter.com/anyarsencarta)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/anyars-yussif/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 

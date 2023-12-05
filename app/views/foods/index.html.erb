@@ -24,47 +24,62 @@
               <td><%= food.measurement_unit %></td>
               <td><%= food.price %></td>
               <td><%= food.quantity %></td>
-              <td><%=  %></td>
+              <td>
+                <% if current_user == food.user %>
+                  <%= link_to "Delete", food, method: :delete, data: { confirm: "Are you sure you want to delete this food?" } %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
       </table>
       
-      <! Modal Form>
+      <!-- Modal Form -->
       <div class="content">
         <div class="header">
           <h2>Add Food</h2>
           <label for="click" class="fa-times">&times;</label>
         </div>
 
-        <form action="/foods" method="post" class="popup">
+        <%= form_for(@food || Food.new, :html => {:class => "form-horizontal", :role => "form"}) do |f| %>
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+            <%= f.label :name, :class => "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :name, :class => "form-control" %>
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="measurement_unit">Measurement Unit</label>
-            <input type="text" name="measurement_unit" id="measurement_unit" class="form-control">
+            <%= f.label :measurement_unit, :class => "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :measurement_unit, :class => "form-control" %>
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="price">Price</label>
-            <input type="text" name="price" id="price" class="form-control">
+            <%= f.label :price, :class => "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :price, :class => "form-control" %>
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="quantity">Quantity</label>
-            <input type="text" name="quantity" id="quantity" class="form-control">
+            <%= f.label :quantity, :class => "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :quantity, :class => "form-control" %>
+            </div>
           </div>
-          
+
           <div class="line"></div>
-          
+
           <div class="foot-action">
-            <button type="submit" class="btn btn-primary">Add Food</button>
+            <div class="col-sm-offset-2 col-sm-10">
+              <%= f.submit "Add Food", :class => "btn btn-primary" %>
+            </div>
             <label for="click" class="close-btn">Close</label>
           </div>
-        </form>
+          
+        <% end %>
       </div>
     </div>
-</div>
+  </div>

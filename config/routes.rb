@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   root to: 'foods#index'
 
-  resources :users, only: [:index, :show] do
-    resources :foods, only: [:index, :show] do
-    end
-  end
+  resources :foods, except: [:show]
+  # resources :users, only: [:index, :show] do
+  #   resources :foods, only: [:index, :show] do
+  #   end
+  # end
   
 end

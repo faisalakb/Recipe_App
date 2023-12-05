@@ -4,13 +4,14 @@ body {
   font-family: sans-serif;
   background: linear-gradient(#e0eafc, #cfdef3);
   height: 100vh;
-
-  /* user-select: none; */
 }
 
 .container {
+  border: 2px solid black;
+  width: 80%;
+  padding: 10px;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -23,6 +24,27 @@ body {
 
 #click {
   display: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.table th {
+  border: 1px solid black;
+  background-color: #27ae60;
+  color: #fff;
+  text-align: left;
+  padding: 10px;
+}
+
+.table td {
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .click-me {
@@ -87,6 +109,18 @@ body {
   cursor: pointer;
 }
 
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  gap: 40px;
+  padding: 10px;
+}
+
+.form-control {
+  font-size: 18px;
+}
+
 .line {
   position: absolute;
   bottom: 60px;
@@ -95,10 +129,17 @@ body {
   background: silver;
 }
 
-.close-btn {
-  position: absolute;
+.foot-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 30px 10px 0 0;
+}
+
+.close-btn,
+.btn-primary {
   bottom: 12px;
-  right: 25px;
   border: 1px solid #27ae60;
   border-radius: 3px;
   color: #27ae60;
@@ -107,7 +148,8 @@ body {
   cursor: pointer;
 }
 
-.close-btn:hover {
+.close-btn:hover,
+.btn-primary:hover {
   background: #27ae60;
   color: white;
   transition: 0.5s;

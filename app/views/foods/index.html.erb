@@ -1,5 +1,3 @@
-<%= stylesheet_link_tag 'modal' %>
-
 <div class="container">
     <div class="center">
       <div class="head-section">
@@ -12,10 +10,11 @@
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Food</th>
             <th>Measurement Unit</th>
-            <th>Price</th>
+            <th>Unit Price</th>
             <th>Quantity</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +24,7 @@
               <td><%= food.measurement_unit %></td>
               <td><%= food.price %></td>
               <td><%= food.quantity %></td>
+              <td><%=  %></td>
             </tr>
           <% end %>
         </tbody>
@@ -37,7 +37,7 @@
           <label for="click" class="fa-times">&times;</label>
         </div>
 
-        <form action="/foods" method="post">
+        <form action="/foods" method="post" class="popup">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" class="form-control">
@@ -58,10 +58,13 @@
             <input type="text" name="quantity" id="quantity" class="form-control">
           </div>
           
-          <button type="submit" class="btn btn-primary">Add Food</button>
+          <div class="line"></div>
+          
+          <div class="foot-action">
+            <button type="submit" class="btn btn-primary">Add Food</button>
+            <label for="click" class="close-btn">Close</label>
+          </div>
         </form>
-        <div class="line"></div>
-        <label for="click" class="close-btn">Close</label>
       </div>
     </div>
 </div>

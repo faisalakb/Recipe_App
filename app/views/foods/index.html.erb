@@ -1,62 +1,67 @@
-<div class="container">
-  <h1>List of Foods</h1>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newFoodModal">Add Food</button>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Measurement Unit</th>
-        <th>Price</th>
-        <th>Quantity</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @foods.each do |food| %>
-        <tr>
-          <td><%= food.name %></td>
-          <td><%= food.measurement_unit %></td>
-          <td><%= food.price %></td>
-          <td><%= food.quantity %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= stylesheet_link_tag 'modal' %>
 
-<!-- Modal -->
-<div class="modal fade" id="newFoodModal" tabindex="-1" role="dialog" aria-labelledby="newFoodModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="newFoodModalLabel">Add Food</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="container">
+    <div class="center">
+      <div class="head-section">
+        <h1>List of Foods</h1>
+        <label for="click" class="click-me">Add Food</label>
       </div>
-      <div class="modal-body">
+
+      <input type="checkbox" id="click">
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Measurement Unit</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do |food| %>
+            <tr>
+              <td><%= food.name %></td>
+              <td><%= food.measurement_unit %></td>
+              <td><%= food.price %></td>
+              <td><%= food.quantity %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+      <! Modal Form>
+      <div class="content">
+        <div class="header">
+          <h2>Add Food</h2>
+          <label for="click" class="fa-times">&times;</label>
+        </div>
+
         <form action="/foods" method="post">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" class="form-control">
           </div>
+
           <div class="form-group">
             <label for="measurement_unit">Measurement Unit</label>
             <input type="text" name="measurement_unit" id="measurement_unit" class="form-control">
           </div>
+
           <div class="form-group">
             <label for="price">Price</label>
             <input type="text" name="price" id="price" class="form-control">
           </div>
+
           <div class="form-group">
             <label for="quantity">Quantity</label>
             <input type="text" name="quantity" id="quantity" class="form-control">
           </div>
+          
           <button type="submit" class="btn btn-primary">Add Food</button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="line"></div>
+        <label for="click" class="close-btn">Close</label>
       </div>
     </div>
-  </div>
 </div>

@@ -2250,3 +2250,55 @@ Started GET "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" for ::1 at 
   
 ActionController::RoutingError (No route matches [GET] "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css"):
   
+Started POST "/foods" for ::1 at 2023-12-05 17:22:14 +0000
+  
+ActionController::RoutingError (No route matches [POST] "/foods"):
+  
+Started GET "/" for ::1 at 2023-12-05 17:22:14 +0000
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:14
+  Rendered foods/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 757)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 3343)
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 0.5ms | Allocations: 5085)
+
+
+Started GET "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" for ::1 at 2023-12-05 17:22:15 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css"):
+  
+Started GET "/" for ::1 at 2023-12-05 17:22:21 +0000
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:14
+  Rendered foods/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 757)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 3343)
+Completed 200 OK in 28ms (Views: 21.1ms | ActiveRecord: 0.6ms | Allocations: 5085)
+
+
+Started GET "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" for ::1 at 2023-12-05 17:22:22 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css"):
+  
+Started GET "/" for ::1 at 2023-12-05 17:23:32 +0000
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:14
+  Rendered foods/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 757)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 3343)
+Completed 200 OK in 33ms (Views: 18.0ms | ActiveRecord: 0.5ms | Allocations: 5073)
+
+
+Started GET "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" for ::1 at 2023-12-05 17:23:32 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/app/assets/bootstrap-5.3.2-dist/css/bootstrap.min.css"):
+  

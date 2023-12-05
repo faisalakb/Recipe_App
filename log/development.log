@@ -217,3 +217,317 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8277932024918942610)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anyars Yussif"], ["created_at", "2023-12-05 13:20:48.343870"], ["updated_at", "2023-12-05 13:20:48.343870"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Yussif Gariba"], ["created_at", "2023-12-05 13:20:48.366464"], ["updated_at", "2023-12-05 13:20:48.366464"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Gariba Sayibu"], ["created_at", "2023-12-05 13:20:48.371474"], ["updated_at", "2023-12-05 13:20:48.371474"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Salamatu Issahaku"], ["created_at", "2023-12-05 13:20:48.376525"], ["updated_at", "2023-12-05 13:20:48.376525"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Issahaku Ibrahim"], ["created_at", "2023-12-05 13:20:48.381418"], ["updated_at", "2023-12-05 13:20:48.381418"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anyars Yussif"], ["created_at", "2023-12-05 13:22:29.475066"], ["updated_at", "2023-12-05 13:22:29.475066"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Yussif Gariba"], ["created_at", "2023-12-05 13:22:29.482193"], ["updated_at", "2023-12-05 13:22:29.482193"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Gariba Sayibu"], ["created_at", "2023-12-05 13:22:29.487380"], ["updated_at", "2023-12-05 13:22:29.487380"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Salamatu Issahaku"], ["created_at", "2023-12-05 13:22:29.492187"], ["updated_at", "2023-12-05 13:22:29.492187"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Issahaku Ibrahim"], ["created_at", "2023-12-05 13:22:29.496996"], ["updated_at", "2023-12-05 13:22:29.496996"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anyars Yussif"], ["created_at", "2023-12-05 13:23:52.904840"], ["updated_at", "2023-12-05 13:23:52.904840"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Yussif Gariba"], ["created_at", "2023-12-05 13:23:52.912117"], ["updated_at", "2023-12-05 13:23:52.912117"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (32.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Gariba Sayibu"], ["created_at", "2023-12-05 13:23:52.916487"], ["updated_at", "2023-12-05 13:23:52.916487"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Salamatu Issahaku"], ["created_at", "2023-12-05 13:23:52.955406"], ["updated_at", "2023-12-05 13:23:52.955406"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Issahaku Ibrahim"], ["created_at", "2023-12-05 13:23:52.965394"], ["updated_at", "2023-12-05 13:23:52.965394"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (19.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fried Rice"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 2], ["user_id", 11], ["created_at", "2023-12-05 13:23:53.007282"], ["updated_at", "2023-12-05 13:23:53.007282"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jollof Rice"], ["measurement_unit", "ml"], ["price", "30.0"], ["quantity", 4], ["user_id", 14], ["created_at", "2023-12-05 13:23:53.042875"], ["updated_at", "2023-12-05 13:23:53.042875"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Banku"], ["measurement_unit", "kg"], ["price", "35.0"], ["quantity", 1], ["user_id", 12], ["created_at", "2023-12-05 13:23:53.048474"], ["updated_at", "2023-12-05 13:23:53.048474"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fufu"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 3], ["user_id", 11], ["created_at", "2023-12-05 13:23:53.053405"], ["updated_at", "2023-12-05 13:23:53.053405"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pizza"], ["measurement_unit", "g"], ["price", "55.0"], ["quantity", 5], ["user_id", 13], ["created_at", "2023-12-05 13:23:53.058982"], ["updated_at", "2023-12-05 13:23:53.058982"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.9ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fried Rice"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 2], ["user_id", 13], ["created_at", "2023-12-05 13:23:53.063763"], ["updated_at", "2023-12-05 13:23:53.063763"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.6ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jollof Rice"], ["measurement_unit", "ml"], ["price", "30.0"], ["quantity", 4], ["user_id", 11], ["created_at", "2023-12-05 13:23:53.069166"], ["updated_at", "2023-12-05 13:23:53.069166"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Banku"], ["measurement_unit", "kg"], ["price", "35.0"], ["quantity", 1], ["user_id", 12], ["created_at", "2023-12-05 13:23:53.074756"], ["updated_at", "2023-12-05 13:23:53.074756"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.7ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fufu"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 3], ["user_id", 12], ["created_at", "2023-12-05 13:23:53.080186"], ["updated_at", "2023-12-05 13:23:53.080186"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.6ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pizza"], ["measurement_unit", "g"], ["price", "55.0"], ["quantity", 5], ["user_id", 14], ["created_at", "2023-12-05 13:23:53.085703"], ["updated_at", "2023-12-05 13:23:53.085703"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (4.0ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 1"], ["preparation_time", 2], ["cooking_time", 3], ["description", "Very sweet"], ["public", false], ["user_id", 11], ["created_at", "2023-12-05 13:23:53.128057"], ["updated_at", "2023-12-05 13:23:53.128057"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 2"], ["preparation_time", 3], ["cooking_time", 4], ["description", "Superb"], ["public", true], ["user_id", 13], ["created_at", "2023-12-05 13:23:53.136291"], ["updated_at", "2023-12-05 13:23:53.136291"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 3"], ["preparation_time", 1], ["cooking_time", 3], ["description", "Excellent"], ["public", false], ["user_id", 11], ["created_at", "2023-12-05 13:23:53.142198"], ["updated_at", "2023-12-05 13:23:53.142198"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 4"], ["preparation_time", 2], ["cooking_time", 5], ["description", "Very Foreign"], ["public", false], ["user_id", 12], ["created_at", "2023-12-05 13:23:53.150325"], ["updated_at", "2023-12-05 13:23:53.150325"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (2.1ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 5"], ["preparation_time", 4], ["cooking_time", 1], ["description", "Very Local"], ["public", true], ["user_id", 14], ["created_at", "2023-12-05 13:23:53.155625"], ["updated_at", "2023-12-05 13:23:53.155625"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 6"], ["preparation_time", 2], ["cooking_time", 3], ["description", "Very sweet"], ["public", false], ["user_id", 11], ["created_at", "2023-12-05 13:23:53.161232"], ["updated_at", "2023-12-05 13:23:53.161232"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 7"], ["preparation_time", 3], ["cooking_time", 4], ["description", "Superb"], ["public", true], ["user_id", 13], ["created_at", "2023-12-05 13:23:53.166888"], ["updated_at", "2023-12-05 13:23:53.166888"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 8"], ["preparation_time", 1], ["cooking_time", 3], ["description", "Excellent"], ["public", false], ["user_id", 11], ["created_at", "2023-12-05 13:23:53.172017"], ["updated_at", "2023-12-05 13:23:53.172017"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 9"], ["preparation_time", 2], ["cooking_time", 5], ["description", "Very Foreign"], ["public", false], ["user_id", 12], ["created_at", "2023-12-05 13:23:53.177669"], ["updated_at", "2023-12-05 13:23:53.177669"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.9ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 10"], ["preparation_time", 4], ["cooking_time", 1], ["description", "Very Local"], ["public", true], ["user_id", 14], ["created_at", "2023-12-05 13:23:53.183032"], ["updated_at", "2023-12-05 13:23:53.183032"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anyars Yussif"], ["created_at", "2023-12-05 13:26:41.723471"], ["updated_at", "2023-12-05 13:26:41.723471"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Yussif Gariba"], ["created_at", "2023-12-05 13:26:41.730572"], ["updated_at", "2023-12-05 13:26:41.730572"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Gariba Sayibu"], ["created_at", "2023-12-05 13:26:41.735099"], ["updated_at", "2023-12-05 13:26:41.735099"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Salamatu Issahaku"], ["created_at", "2023-12-05 13:26:41.740861"], ["updated_at", "2023-12-05 13:26:41.740861"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Issahaku Ibrahim"], ["created_at", "2023-12-05 13:26:41.745658"], ["updated_at", "2023-12-05 13:26:41.745658"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.3ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fried Rice"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 2], ["user_id", 16], ["created_at", "2023-12-05 13:26:41.788726"], ["updated_at", "2023-12-05 13:26:41.788726"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.2ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jollof Rice"], ["measurement_unit", "ml"], ["price", "30.0"], ["quantity", 4], ["user_id", 19], ["created_at", "2023-12-05 13:26:41.794746"], ["updated_at", "2023-12-05 13:26:41.794746"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Banku"], ["measurement_unit", "kg"], ["price", "35.0"], ["quantity", 1], ["user_id", 17], ["created_at", "2023-12-05 13:26:41.800435"], ["updated_at", "2023-12-05 13:26:41.800435"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fufu"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 3], ["user_id", 16], ["created_at", "2023-12-05 13:26:41.805557"], ["updated_at", "2023-12-05 13:26:41.805557"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pizza"], ["measurement_unit", "g"], ["price", "55.0"], ["quantity", 5], ["user_id", 18], ["created_at", "2023-12-05 13:26:41.811030"], ["updated_at", "2023-12-05 13:26:41.811030"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fried Rice"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 2], ["user_id", 18], ["created_at", "2023-12-05 13:26:41.817532"], ["updated_at", "2023-12-05 13:26:41.817532"]]
+  [1m[36mTRANSACTION (47.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (4.2ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jollof Rice"], ["measurement_unit", "ml"], ["price", "30.0"], ["quantity", 4], ["user_id", 16], ["created_at", "2023-12-05 13:26:41.872480"], ["updated_at", "2023-12-05 13:26:41.872480"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (4.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Banku"], ["measurement_unit", "kg"], ["price", "35.0"], ["quantity", 1], ["user_id", 17], ["created_at", "2023-12-05 13:26:41.886816"], ["updated_at", "2023-12-05 13:26:41.886816"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (3.0ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fufu"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 3], ["user_id", 17], ["created_at", "2023-12-05 13:26:41.898137"], ["updated_at", "2023-12-05 13:26:41.898137"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.3ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pizza"], ["measurement_unit", "g"], ["price", "55.0"], ["quantity", 5], ["user_id", 19], ["created_at", "2023-12-05 13:26:41.906159"], ["updated_at", "2023-12-05 13:26:41.906159"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (3.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 1"], ["preparation_time", 2], ["cooking_time", 3], ["description", "Very sweet"], ["public", false], ["user_id", 16], ["created_at", "2023-12-05 13:26:41.946752"], ["updated_at", "2023-12-05 13:26:41.946752"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (2.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 2"], ["preparation_time", 3], ["cooking_time", 4], ["description", "Superb"], ["public", true], ["user_id", 18], ["created_at", "2023-12-05 13:26:41.953538"], ["updated_at", "2023-12-05 13:26:41.953538"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (3.7ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 3"], ["preparation_time", 1], ["cooking_time", 3], ["description", "Excellent"], ["public", false], ["user_id", 16], ["created_at", "2023-12-05 13:26:41.959314"], ["updated_at", "2023-12-05 13:26:41.959314"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.7ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 4"], ["preparation_time", 2], ["cooking_time", 5], ["description", "Very Foreign"], ["public", false], ["user_id", 17], ["created_at", "2023-12-05 13:26:41.966950"], ["updated_at", "2023-12-05 13:26:41.966950"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 5"], ["preparation_time", 4], ["cooking_time", 1], ["description", "Very Local"], ["public", true], ["user_id", 19], ["created_at", "2023-12-05 13:26:41.972097"], ["updated_at", "2023-12-05 13:26:41.972097"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 6"], ["preparation_time", 2], ["cooking_time", 3], ["description", "Very sweet"], ["public", false], ["user_id", 16], ["created_at", "2023-12-05 13:26:41.977288"], ["updated_at", "2023-12-05 13:26:41.977288"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.3ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 7"], ["preparation_time", 3], ["cooking_time", 4], ["description", "Superb"], ["public", true], ["user_id", 18], ["created_at", "2023-12-05 13:26:41.982061"], ["updated_at", "2023-12-05 13:26:41.982061"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 8"], ["preparation_time", 1], ["cooking_time", 3], ["description", "Excellent"], ["public", false], ["user_id", 16], ["created_at", "2023-12-05 13:26:41.986339"], ["updated_at", "2023-12-05 13:26:41.986339"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 9"], ["preparation_time", 2], ["cooking_time", 5], ["description", "Very Foreign"], ["public", false], ["user_id", 17], ["created_at", "2023-12-05 13:26:41.992486"], ["updated_at", "2023-12-05 13:26:41.992486"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.7ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 10"], ["preparation_time", 4], ["cooking_time", 1], ["description", "Very Local"], ["public", true], ["user_id", 19], ["created_at", "2023-12-05 13:26:41.996815"], ["updated_at", "2023-12-05 13:26:41.996815"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (2.7ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 11], ["food_id", 11], ["created_at", "2023-12-05 13:26:42.018657"], ["updated_at", "2023-12-05 13:26:42.018657"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.5ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 13], ["food_id", 13], ["created_at", "2023-12-05 13:26:42.024357"], ["updated_at", "2023-12-05 13:26:42.024357"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.3ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 15], ["food_id", 20], ["created_at", "2023-12-05 13:26:42.028707"], ["updated_at", "2023-12-05 13:26:42.028707"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.6ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 11], ["food_id", 18], ["created_at", "2023-12-05 13:26:42.032857"], ["updated_at", "2023-12-05 13:26:42.032857"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.3ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 19], ["food_id", 11], ["created_at", "2023-12-05 13:26:42.037832"], ["updated_at", "2023-12-05 13:26:42.037832"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (3.3ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 20], ["food_id", 14], ["created_at", "2023-12-05 13:26:42.042435"], ["updated_at", "2023-12-05 13:26:42.042435"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anyars Yussif"], ["created_at", "2023-12-05 13:28:21.262451"], ["updated_at", "2023-12-05 13:28:21.262451"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Yussif Gariba"], ["created_at", "2023-12-05 13:28:21.269647"], ["updated_at", "2023-12-05 13:28:21.269647"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Gariba Sayibu"], ["created_at", "2023-12-05 13:28:21.274230"], ["updated_at", "2023-12-05 13:28:21.274230"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Salamatu Issahaku"], ["created_at", "2023-12-05 13:28:21.278838"], ["updated_at", "2023-12-05 13:28:21.278838"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Issahaku Ibrahim"], ["created_at", "2023-12-05 13:28:21.284049"], ["updated_at", "2023-12-05 13:28:21.284049"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fried Rice"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 2], ["user_id", 21], ["created_at", "2023-12-05 13:28:21.325979"], ["updated_at", "2023-12-05 13:28:21.325979"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.1ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jollof Rice"], ["measurement_unit", "ml"], ["price", "30.0"], ["quantity", 4], ["user_id", 24], ["created_at", "2023-12-05 13:28:21.332173"], ["updated_at", "2023-12-05 13:28:21.332173"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Banku"], ["measurement_unit", "kg"], ["price", "35.0"], ["quantity", 1], ["user_id", 22], ["created_at", "2023-12-05 13:28:21.337813"], ["updated_at", "2023-12-05 13:28:21.337813"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fufu"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 3], ["user_id", 21], ["created_at", "2023-12-05 13:28:21.343398"], ["updated_at", "2023-12-05 13:28:21.343398"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pizza"], ["measurement_unit", "g"], ["price", "55.0"], ["quantity", 5], ["user_id", 23], ["created_at", "2023-12-05 13:28:21.348335"], ["updated_at", "2023-12-05 13:28:21.348335"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fried Rice"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 2], ["user_id", 23], ["created_at", "2023-12-05 13:28:21.353944"], ["updated_at", "2023-12-05 13:28:21.353944"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.0ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jollof Rice"], ["measurement_unit", "ml"], ["price", "30.0"], ["quantity", 4], ["user_id", 21], ["created_at", "2023-12-05 13:28:21.358967"], ["updated_at", "2023-12-05 13:28:21.358967"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.5ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Banku"], ["measurement_unit", "kg"], ["price", "35.0"], ["quantity", 1], ["user_id", 22], ["created_at", "2023-12-05 13:28:21.364425"], ["updated_at", "2023-12-05 13:28:21.364425"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (2.0ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fufu"], ["measurement_unit", "kg"], ["price", "25.0"], ["quantity", 3], ["user_id", 22], ["created_at", "2023-12-05 13:28:21.370544"], ["updated_at", "2023-12-05 13:28:21.370544"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (1.6ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pizza"], ["measurement_unit", "g"], ["price", "55.0"], ["quantity", 5], ["user_id", 24], ["created_at", "2023-12-05 13:28:21.376223"], ["updated_at", "2023-12-05 13:28:21.376223"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (3.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 1"], ["preparation_time", 2], ["cooking_time", 3], ["description", "Very sweet"], ["public", false], ["user_id", 21], ["created_at", "2023-12-05 13:28:21.410596"], ["updated_at", "2023-12-05 13:28:21.410596"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (2.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 2"], ["preparation_time", 3], ["cooking_time", 4], ["description", "Superb"], ["public", true], ["user_id", 23], ["created_at", "2023-12-05 13:28:21.417592"], ["updated_at", "2023-12-05 13:28:21.417592"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (3.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 3"], ["preparation_time", 1], ["cooking_time", 3], ["description", "Excellent"], ["public", false], ["user_id", 21], ["created_at", "2023-12-05 13:28:21.423524"], ["updated_at", "2023-12-05 13:28:21.423524"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 4"], ["preparation_time", 2], ["cooking_time", 5], ["description", "Very Foreign"], ["public", false], ["user_id", 22], ["created_at", "2023-12-05 13:28:21.430823"], ["updated_at", "2023-12-05 13:28:21.430823"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 5"], ["preparation_time", 4], ["cooking_time", 1], ["description", "Very Local"], ["public", true], ["user_id", 24], ["created_at", "2023-12-05 13:28:21.436826"], ["updated_at", "2023-12-05 13:28:21.436826"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.6ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 6"], ["preparation_time", 2], ["cooking_time", 3], ["description", "Very sweet"], ["public", false], ["user_id", 21], ["created_at", "2023-12-05 13:28:21.442504"], ["updated_at", "2023-12-05 13:28:21.442504"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 7"], ["preparation_time", 3], ["cooking_time", 4], ["description", "Superb"], ["public", true], ["user_id", 23], ["created_at", "2023-12-05 13:28:21.448041"], ["updated_at", "2023-12-05 13:28:21.448041"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (2.0ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 8"], ["preparation_time", 1], ["cooking_time", 3], ["description", "Excellent"], ["public", false], ["user_id", 21], ["created_at", "2023-12-05 13:28:21.453693"], ["updated_at", "2023-12-05 13:28:21.453693"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.5ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 9"], ["preparation_time", 2], ["cooking_time", 5], ["description", "Very Foreign"], ["public", false], ["user_id", 22], ["created_at", "2023-12-05 13:28:21.459259"], ["updated_at", "2023-12-05 13:28:21.459259"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipe Create (1.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "recipe 10"], ["preparation_time", 4], ["cooking_time", 1], ["description", "Very Local"], ["public", true], ["user_id", 24], ["created_at", "2023-12-05 13:28:21.464235"], ["updated_at", "2023-12-05 13:28:21.464235"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (2.1ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 21], ["food_id", 21], ["created_at", "2023-12-05 13:28:21.488116"], ["updated_at", "2023-12-05 13:28:21.488116"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.5ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 23], ["food_id", 23], ["created_at", "2023-12-05 13:28:21.493294"], ["updated_at", "2023-12-05 13:28:21.493294"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.3ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 25], ["food_id", 30], ["created_at", "2023-12-05 13:28:21.497519"], ["updated_at", "2023-12-05 13:28:21.497519"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.7ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 21], ["food_id", 28], ["created_at", "2023-12-05 13:28:21.502676"], ["updated_at", "2023-12-05 13:28:21.502676"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.3ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 29], ["food_id", 21], ["created_at", "2023-12-05 13:28:21.507551"], ["updated_at", "2023-12-05 13:28:21.507551"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (3.4ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 30], ["food_id", 24], ["created_at", "2023-12-05 13:28:21.512257"], ["updated_at", "2023-12-05 13:28:21.512257"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.9ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 24], ["food_id", 28], ["created_at", "2023-12-05 13:28:21.520629"], ["updated_at", "2023-12-05 13:28:21.520629"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.4ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 28], ["food_id", 23], ["created_at", "2023-12-05 13:28:21.526353"], ["updated_at", "2023-12-05 13:28:21.526353"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.4ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 26], ["food_id", 30], ["created_at", "2023-12-05 13:28:21.531298"], ["updated_at", "2023-12-05 13:28:21.531298"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.3ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 23], ["food_id", 28], ["created_at", "2023-12-05 13:28:21.536361"], ["updated_at", "2023-12-05 13:28:21.536361"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.7ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 24], ["food_id", 21], ["created_at", "2023-12-05 13:28:21.540479"], ["updated_at", "2023-12-05 13:28:21.540479"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRecipeFood Create (1.3ms)[0m  [1m[32mINSERT INTO "recipe_foods" ("quantity", "recipe_id", "food_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["quantity", 2], ["recipe_id", 30], ["food_id", 22], ["created_at", "2023-12-05 13:28:21.545034"], ["updated_at", "2023-12-05 13:28:21.545034"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m

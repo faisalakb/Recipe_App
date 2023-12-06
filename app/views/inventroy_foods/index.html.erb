@@ -1,0 +1,4 @@
+<h1>Inventory Foods</h1>
+<% @inventory_foods.each do |inventory_food| %>
+  <p><%= inventory_food.food.name %>: <%= inventory_food.quantity %></p>
+<% end %>

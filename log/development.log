@@ -10299,3 +10299,69 @@ Processing by Devise::RegistrationsController#create as TURBO_STREAM
 Completed 422 Unprocessable Entity in 34ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 12324)
 
 
+Started GET "/users/sign_up" for ::1 at 2023-12-06 12:05:34 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 229)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1309)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 8277)
+Completed 200 OK in 46ms (Views: 41.2ms | ActiveRecord: 0.0ms | Allocations: 8882)
+
+
+Started POST "/users" for ::1 at 2023-12-06 12:05:36 +0000
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 944)
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 229)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3581)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 10502)
+Completed 422 Unprocessable Entity in 39ms (Views: 34.7ms | ActiveRecord: 0.0ms | Allocations: 12321)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-12-06 12:05:56 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 229)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1309)
+  Rendered layout layouts/application.html.erb (Duration: 56.1ms | Allocations: 8277)
+Completed 200 OK in 64ms (Views: 59.4ms | ActiveRecord: 0.0ms | Allocations: 8873)
+
+
+Started POST "/users" for ::1 at 2023-12-06 12:05:58 +0000
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 944)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 229)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3581)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 10502)
+Completed 422 Unprocessable Entity in 60ms (Views: 51.8ms | ActiveRecord: 0.0ms | Allocations: 12327)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-12-06 12:06:12 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 344)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1572)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 8555)
+Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 0.0ms | Allocations: 9592)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-12-06 12:06:12 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 329)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1162)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 8127)
+Completed 200 OK in 33ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 8792)
+
+

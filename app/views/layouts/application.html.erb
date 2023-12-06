@@ -47,9 +47,11 @@
       var ascending = $(this).hasClass("asc");
       $(this).toggleClass("asc desc");
 
+      var columnIndex = $(this).index(); // Get the index of the clicked column header
+
       rows.sort(function(a, b) {
-        var aValue = $(a).find("td:first").text();
-        var bValue = $(b).find("td:first").text();
+        var aValue = $(a).find("td").eq(columnIndex).text(); // Get the value of the corresponding column in row a
+      var bValue = $(b).find("td").eq(columnIndex).text(); // Get the value of the corresponding column in row b
         return ascending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
       });
 

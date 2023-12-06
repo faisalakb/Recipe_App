@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_05_152134) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_143428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,24 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_152134) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_inventories_on_users_id"
+  end
+
+  create_table "inventory_foods", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "inventories_id", null: false
+    t.bigint "foods_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["foods_id"], name: "index_inventory_foods_on_foods_id"
+    t.index ["inventories_id"], name: "index_inventory_foods_on_inventories_id"
   end
 
   create_table "recipe_foods", force: :cascade do |t|
@@ -62,5 +80,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_152134) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "inventories", "users", column: "users_id"
+  add_foreign_key "inventory_foods", "foods", column: "foods_id"
+  add_foreign_key "inventory_foods", "inventories", column: "inventories_id"
   add_foreign_key "recipes", "users"
 end

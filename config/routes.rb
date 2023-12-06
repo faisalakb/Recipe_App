@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
 
   get '/foods/:id', to: 'foods#show', as: 'food'
+  get '/generalshoppinglist', to: 'generalshoppinglist#index'
+  get '/public_recipes', to: 'recipes#public_list', as: 'public_recipes'
   
   resources :foods, except: [:index] do
     collection do

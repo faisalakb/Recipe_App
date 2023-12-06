@@ -1,0 +1,72 @@
+<h2><%= @recipe.name %></h2>
+<div class='show-recipe'>
+  <div class='show-recipe-left'>
+    <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
+    <% if can? :destroy, @recipe %>
+      <div>
+        Public
+        <% if @recipe.public %>
+          <%= check_box_tag 'recipe[public]', 1, true, disabled: false %>
+        <% else %>
+          <%= check_box_tag 'recipe[public]', 1, false, disabled: false %>
+        <% end %>
+      </div>
+    <% else %>
+      <div>
+        Public
+        <%= check_box_tag 'recipe[public]', 1, @recipe.public, disabled: true %>
+      </div>
+    <% end %>
+  </div>
+
+  <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
+  <p>Steps go here...</p>
+  <div class='show-recipe-left'>
+    <button class="new-button">
+      <%= link_to "General shopping list", generalshoppinglist_path, class: "new-recipe" %>
+    </button>
+    <% if can? :update, @recipe %>
+      <button class="new-button">
+        <%= link_to "Add ingredient", new_recipe_path(@recipe), class: "new-recipe" %>
+      </button>
+    <% end %>
+  </div>
+  <hr>
+
+  <!-- Combine the table content here -->
+  <table class="table-foods">
+    <% if @foods.nil? %>
+      <li class="no-recipes">There are no foods yet.</li>
+    <% else %>
+      <thead class="header-foods">
+        <tr class="first-row">
+          <th class="fr-food">Food</th>
+          <% if view == 'foods' %>
+            <th class="fr-food">Measurement Unit</th>
+            <th class="fr-food">Unit price</th>
+            <th class="fr-food">Quantity</th>
+          <% else %>
+            <th class="fr-food">Quantity</th>
+            <th class="fr-food">Value</th>
+          <% end %>
+          <th class="fr-food">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="body-foods">
+        <% @foods.each_with_index do |food, index| %>
+          <%= render partial: 'shared/food', locals: {food: food, index: index+1, view: view} %>
+        <% end %>
+      </tbody>
+    <% end %>
+  </table>
+</div>
+
+<% if @recipe %>
+  <table class="recipe-detail-table">
+    <!-- The rest of your existing code for the recipe details table -->
+  </table>
+<% else %>
+  <p class="private-recipe-message">This recipe is private and cannot be viewed.</p>
+<% end %>
+
+<%= link_to 'Back to Recipes List', recipes_path, class: "btn btn-link" %>

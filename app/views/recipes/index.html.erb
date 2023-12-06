@@ -1,17 +1,14 @@
 <div class="main-container">
   <div class="recipes-container">
-    <h1 class="page-title">Recipes</h1>
-    <button class="new-button">
-      <%= link_to "New Recipe", new_recipe_path, class: "new-recipe" %>
-    </button>
+    <h1 class="page-title">Public Recipes</h1>
   </div>
-  
+
   <ul class="recipes">
     <% if @recipes.empty? %>
-      <li class="no-recipes">There are no recipes yet.</li>
+      <li class="no-recipes">There are no public recipes yet.</li>
     <% else %>
       <% @recipes.each do |recipe| %>
-        <%= render partial: 'shared/recipe', locals: { recipe: recipe } %>
+        <%= render partial: 'common_features/recipe', locals: { recipe: recipe, public_list: true } %>
       <% end %>
     <% end %>
   </ul>

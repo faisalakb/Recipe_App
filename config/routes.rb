@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
   root to: 'foods#index'
 
-  resources :foods, except: [:show]
+  get '/foods/:id', to: 'foods#show', as: 'food'
+  
+  resources :foods, except: [:index]
+  
   # resources :users, only: [:index, :show] do
   #   resources :foods, only: [:index, :show] do
   #   end

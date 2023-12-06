@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
   end
 
   def show
-    if params[:id] == "missing_foods"
+    if params[:id] == 'missing_foods'
       missing_foods
       render :missing_foods
     else

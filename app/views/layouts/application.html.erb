@@ -13,6 +13,8 @@
     <%= javascript_importmap_tags %>
 
     <%= javascript_include_tag 'rails-ujs' %>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
   <body>
@@ -20,5 +22,27 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <script>
+  $(document).ready(function() {
+    $(".sortable").click(function() {
+      var table = $(this).closest("table");
+      var rows = table.find("tbody > tr").get();
+
+      var ascending = $(this).hasClass("asc");
+      $(this).toggleClass("asc desc");
+
+      rows.sort(function(a, b) {
+        var aValue = $(a).find("td:first").text();
+        var bValue = $(b).find("td:first").text();
+        return ascending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
+      });
+
+      table.children("tbody").empty().append(rows);
+    });
+    // Set default sort class
+    $(".sortable").first().addClass("asc");
+  });
+</script>
   </body>
 </html>

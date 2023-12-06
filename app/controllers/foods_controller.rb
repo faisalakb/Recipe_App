@@ -31,7 +31,7 @@ class FoodsController < ApplicationController
       redirect_to foods_path, alert: 'You are not authorized to delete this food.'
     end
   end
-  
+
   private
 
   def food_params

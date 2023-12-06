@@ -1,0 +1,39 @@
+.mf-container {
+    border: 2px solid black;
+    width: 80%;
+    padding: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mf-container h1 {
+    text-align: center;
+}
+
+.mf-head-values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mf-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.mf-table th {
+    border: 1px solid black;
+    background-color: #27ae60;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+}
+  
+.mf-table td {
+    border: 1px solid black;
+    padding: 10px;
+}

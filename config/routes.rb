@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
+<<<<<<< HEAD
+=======
   resources :recipes, only: [:index, :show, :new, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+>>>>>>> 113650727911b45c03c4ae59595764e15d9d6603
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+<<<<<<< HEAD
+  root to: 'foods#index'
+=======
   # Defines the root path route ("/")
   # root "posts#index"
 
   root to: 'recipes#index'
+>>>>>>> 113650727911b45c03c4ae59595764e15d9d6603
 
   get '/foods/:id', to: 'foods#show', as: 'food'
   
@@ -18,5 +23,9 @@ Rails.application.routes.draw do
     collection do
       get 'missing_foods'
     end
+  end
+
+  resources :inventories do
+    resources :inventory_foods, only: [:index, :create, :update, :destroy]
   end
 end

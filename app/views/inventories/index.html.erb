@@ -1,0 +1,9 @@
+<h1>Inventories</h1>
+
+<% if @inventories.any? %>
+  <% @inventories.each do |inventory| %>
+    <p><%= inventory.name %></p>
+  <% end %>
+<% else %>
+  <%= link_to 'Create Inventory', new_inventory_path %>
+<% end %>

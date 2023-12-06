@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   root to: 'foods#index'
 
-  get '/foods/:id', to: 'foods#show', as: 'food'
+  # get '/foods/:id', to: 'foods#show', as: 'food'
   get '/missing_foods', to: 'foods#missing_foods'
   
   resources :foods, except: [:index] do

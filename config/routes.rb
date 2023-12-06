@@ -13,11 +13,9 @@ Rails.application.routes.draw do
 
   get '/foods/:id', to: 'foods#show', as: 'food'
   
-  resources :foods, except: [:index]
-  
-  # resources :users, only: [:index, :show] do
-  #   resources :foods, only: [:index, :show] do
-  #   end
-  # end
-  
+  resources :foods, except: [:index] do
+    collection do
+      get 'missing_foods'
+    end
+  end
 end

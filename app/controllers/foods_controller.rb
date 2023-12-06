@@ -6,11 +6,22 @@ class FoodsController < ApplicationController
   end
 
   def show
-    @food = Food.find(params[:id])
+    if params[:id] == 'missing_foods'
+      missing_foods
+      render :missing_foods
+    else
+      @food = Food.find(params[:id])
+    end
   end
 
   def new
     @food = Food.new
+  end
+
+  def missing_foods
+    @missing_foods = current_user.foods - current_user.recipes.joins(:foods).pluck(:food_id).uniq
+    @total_items = @missing_foods.count
+    @total_price = @missing_foods.sum(&:price)
   end
 
   def create

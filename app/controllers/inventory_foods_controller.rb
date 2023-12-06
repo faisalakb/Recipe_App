@@ -1,6 +1,6 @@
 class InventoryFoodsController < ApplicationController
   before_action :set_inventory
-  before_action :set_inventory_food, only: [:update, :destroy]
+  before_action :set_inventory_food, only: %i[update destroy]
 
   def index
     @inventory_foods = @inventory.inventory_foods
@@ -17,7 +17,8 @@ class InventoryFoodsController < ApplicationController
 
   def update
     if @inventory_food.update(inventory_food_params)
-      redirect_to inventory_inventory_foods_path(@inventory), notice: 'Inventory food quantity was successfully updated.'
+      redirect_to inventory_inventory_foods_path(@inventory),
+                  notice: 'Inventory food quantity was successfully updated.'
     else
       render :index
     end

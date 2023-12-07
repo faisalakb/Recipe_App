@@ -27,6 +27,30 @@ eighth_food = Food.create(name:'Banku', measurement_unit: 'kg', price: 35, quant
 nineth_food = Food.create(name:'Fufu', measurement_unit: 'kg', price: 25, quantity: 3, user_id: 2)
 tenth_food = Food.create(name:'Pizza', measurement_unit: 'g', price: 55, quantity: 5, user_id: 2)
 
+# Inventories
+first_inv = Inventory.create(name:'Inventory 1', user_id: 1)
+second_inv = Inventory.create(name:'Inventory 2', user_id: 2)
+third_inv = Inventory.create(name:'Inventory 3', user_id: 1)
+fourth_inv = Inventory.create(name:'Inventory 4', user_id: 2)
+fifth_inv = Inventory.create(name:'Inventory 5', user_id: 1)
+sixth_inv = Inventory.create(name:'Inventory 6', user_id: 1)
+seventh_inv = Inventory.create(name:'Inventory 7', user_id: 2)
+eighth_inv = Inventory.create(name:'Inventory 8', user_id: 1)
+nineth_inv = Inventory.create(name:'Inventory 9', user_id: 2)
+tenth_inv = Inventory.create(name:'Inventory 10', user_id: 2)
+
+# Inventory Foods
+first_invF = InventoryFood.create(quantity: 3, inventory_id: first_inv.id, food_id: third_food.id)
+second_invF = InventoryFood.create(quantity: 3, inventory_id: second_inv.id, food_id: first_food.id)
+third_invF = InventoryFood.create(quantity: 3, inventory_id: first_inv.id, food_id: sixth_food.id)
+fourth_invF = InventoryFood.create(quantity: 3, inventory_id: third_inv.id, food_id: second_food.id)
+fifth_invF = InventoryFood.create(quantity: 3, inventory_id: second_inv.id, food_id: first_food.id)
+sixth_invF = InventoryFood.create(quantity: 3, inventory_id: fifth_inv.id, food_id: seventh_food.id)
+seventh_invF = InventoryFood.create(quantity: 3, inventory_id: first_inv.id, food_id: second_food.id)
+eighth_invF = InventoryFood.create(quantity: 3, inventory_id: eighth_inv.id, food_id: tenth_food.id)
+nineth_invF = InventoryFood.create(quantity: 3, inventory_id: second_inv.id, food_id: fifth_food.id)
+tenth_invF = InventoryFood.create(quantity: 3, inventory_id: sixth_inv.id, food_id: fourth_food.id)
+
 # Recipes
 recipe_1 = Recipe.create(name: 'recipe 1', preparation_time: 2, cooking_time: 3, description: 'Very sweet', public: false, user_id: 1)
 recipe_2 = Recipe.create(name: 'recipe 2', preparation_time: 3.5, cooking_time: 4, description: 'Superb', public: true, user_id: 1)

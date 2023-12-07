@@ -33,7 +33,6 @@ class RecipesController < ApplicationController
   def public_list
     @public_recipes = Recipe.where(public: true).order(created_at: :desc)
   end
-  
 
   private
 

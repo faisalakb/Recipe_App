@@ -1,13 +1,4 @@
-.nav-container {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  height: 3rem;
-  background-color: #27ae60;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 99;
-}
-
+.nav-container,
 .nav-container ul {
   display: flex;
   gap: 20px;
@@ -16,7 +7,19 @@
   padding-right: 50px;
 }
 
-.nav-container a {
+.nav-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 3rem;
+  background-color: #27ae60;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.nav-container a, .user {
   text-decoration: none;
   color: #fff;
 }

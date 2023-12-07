@@ -7,10 +7,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-
+  
   root to: 'foods#index'
 
-  get '/foods/:id', to: 'foods#show', as: 'food'
+  # root to: 'recipes#index'
+
+  # get '/foods/:id', to: 'foods#show', as: 'food'
+  get '/missing_foods', to: 'foods#missing_foods'
   
   resources :foods, except: [:index] do
     collection do

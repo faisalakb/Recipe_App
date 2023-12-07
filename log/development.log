@@ -16269,3 +16269,78 @@ Processing by FoodsController#index as HTML
 Completed 200 OK in 126ms (Views: 118.0ms | ActiveRecord: 1.8ms | Allocations: 16404)
 
 
+Started GET "/" for ::1 at 2023-12-07 08:51:23 +0000
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/foods/index.html.erb:21
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  Rendered foods/index.html.erb within layouts/application (Duration: 26.5ms | Allocations: 4594)
+  Rendered layout layouts/application.html.erb (Duration: 137.8ms | Allocations: 14701)
+Completed 200 OK in 150ms (Views: 138.6ms | ActiveRecord: 1.5ms | Allocations: 16390)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2023-12-07 08:51:28 +0000
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 12ms (ActiveRecord: 0.4ms | Allocations: 1881)
+
+
+Started GET "/" for ::1 at 2023-12-07 08:51:28 +0000
+Processing by FoodsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 318)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-12-07 08:51:28 +0000
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 329)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1165)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 9803)
+Completed 200 OK in 45ms (Views: 41.4ms | ActiveRecord: 0.0ms | Allocations: 10434)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-12-07 08:51:46 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 329)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1162)
+  Rendered layout layouts/application.html.erb (Duration: 157.4ms | Allocations: 9798)
+Completed 200 OK in 166ms (Views: 158.9ms | ActiveRecord: 0.0ms | Allocations: 10420)
+
+
+Started GET "/" for ::1 at 2023-12-07 08:51:49 +0000
+Processing by FoodsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 309)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-12-07 08:51:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 329)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1162)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 9799)
+Completed 200 OK in 34ms (Views: 30.9ms | ActiveRecord: 0.0ms | Allocations: 10449)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8277932024918942610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (11.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8277932024918942610)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

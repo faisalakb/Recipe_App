@@ -1,3 +1,4 @@
+.left-menu,
 .nav-container,
 .nav-container ul {
   display: flex;
@@ -5,6 +6,17 @@
   list-style: none;
   justify-content: flex-end;
   padding-right: 50px;
+}
+
+.left-menu {
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-danger {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 100px;
 }
 
 .nav-container {

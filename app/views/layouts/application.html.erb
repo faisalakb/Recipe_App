@@ -26,7 +26,18 @@
   <body>
     <% if user_signed_in? %>
       <nav class="nav-container">
-        <p class="user">Welcome, <%= current_user.name %></p>
+        <div class="left-menu">
+          <% if user_signed_in? %>
+            <form action="<%= destroy_user_session_path %>" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+
+            <p class="user">Welcome, <%= current_user.name %></p>
+          <% end %>
+        </div>
+
         <ul>
           <li><a href="/" data-turbolinks-track="true">Foods</a></li>
           <li><a href="/recipes" data-turbolinks-track="true">Recipes</a></li>

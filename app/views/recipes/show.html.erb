@@ -1,30 +1,23 @@
-<h2><%= @recipe.name %></h2>
-<div class='show-recipe'>
+<h2 class='head-section'><%= @recipe.name %></h2>
+
+<div class='container'>
   <div class='show-recipe-left'>
     <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
     <% if can? :destroy, @recipe %>
       <div>
         Public
-        <% if @recipe.public %>
-          <%= check_box_tag 'recipe[public]', 1, true, disabled: false %>
-        <% else %>
-          <%= check_box_tag 'recipe[public]', 1, false, disabled: false %>
-        <% end %>
-      </div>
-    <% else %>
-      <div>
-        Public
-        <%= check_box_tag 'recipe[public]', 1, @recipe.public, disabled: true %>
+        <%= check_box_tag 'recipe[public]', 1, @recipe.public, disabled: !can?(:destroy, @recipe) %>
       </div>
     <% end %>
   </div>
 
   <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
   <p>Steps go here...</p>
+
   <div class='show-recipe-left'>
-    <button class="new-button">
-      <%= link_to "General shopping list", generalshoppinglist_path, class: "new-recipe" %>
-    </button>
+    <button id="openPopup">Open Popup</button>
+
+   
     <% if can? :update, @recipe %>
       <button class="new-button">
         <%= link_to "Add ingredient", new_recipe_path(@recipe), class: "new-recipe" %>
@@ -33,10 +26,11 @@
   </div>
   <hr>
 
-  <!-- Combine the table content here -->
   <table class="table-foods">
     <% if @foods.nil? %>
-      <li class="no-recipes">There are no foods yet.</li>
+      <tr class="no-recipes">
+        <td colspan="5">There are no foods yet.</td>
+      </tr>
     <% else %>
       <thead class="header-foods">
         <tr class="first-row">
@@ -44,17 +38,14 @@
           <% if view == 'foods' %>
             <th class="fr-food">Measurement Unit</th>
             <th class="fr-food">Unit price</th>
-            <th class="fr-food">Quantity</th>
-          <% else %>
-            <th class="fr-food">Quantity</th>
-            <th class="fr-food">Value</th>
           <% end %>
+          <th class="fr-food">Quantity</th>
           <th class="fr-food">Actions</th>
         </tr>
       </thead>
       <tbody class="body-foods">
         <% @foods.each_with_index do |food, index| %>
-          <%= render partial: 'shared/food', locals: {food: food, index: index+1, view: view} %>
+          <%= render partial: 'shared/food', locals: { food: food, index: index+1, view: view } %>
         <% end %>
       </tbody>
     <% end %>
@@ -63,10 +54,35 @@
 
 <% if @recipe %>
   <table class="recipe-detail-table">
-    <!-- The rest of your existing code for the recipe details table -->
+    <!-- Add content for recipe details table if needed -->
   </table>
 <% else %>
   <p class="private-recipe-message">This recipe is private and cannot be viewed.</p>
 <% end %>
 
 <%= link_to 'Back to Recipes List', recipes_path, class: "btn btn-link" %>
+
+
+<div class="bd" id="popup" style="display: none;">
+  <h2>Generating Shopping List</h2>
+  <p>Choose an inventory:</p>
+  <select id="inventorySelect">
+    <option value="inventory1">Inventory 1</option>
+    <option value="inventory2">Inventory 2</option>
+    <option value="inventory3">Inventory 3</option>
+  </select>
+  <button onclick="generateShoppingList()">Generate</button>
+  <button id="closePopup" class="close">&times;</button>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#openPopup").click(function() {
+      $("#popup").show();
+    });
+
+    $("#closePopup").click(function() {
+      $("#popup").hide();
+    });
+  });
+</script>

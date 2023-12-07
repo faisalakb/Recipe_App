@@ -159,3 +159,13 @@ body {
 .alert {
   text-align: center;
 }
+
+.Iform {
+  margin: auto;
+  width: 50%;
+}
+
+.Iform form {
+  width: 100%;
+  text-align: center;
+}

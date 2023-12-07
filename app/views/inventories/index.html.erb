@@ -1,9 +1,39 @@
+<div class="container">
+<div class="center">
+<div class="head-section">
 <h1>Inventories</h1>
+<p> <%= link_to 'Home', "/" %> </p>
+<%= link_to 'Create Inventory', new_inventory_path %>
+</div>
 
-<% if @inventories.any? %>
-  <% @inventories.each do |inventory| %>
-    <p><%= inventory.name %></p>
-  <% end %>
-<% else %>
-  <%= link_to 'Create Inventory', new_inventory_path %>
+<% flash.each do |type, message| %>
+  <div class="alert alert-<%= type %>">
+    <%= message %>
+  </div>
 <% end %>
+
+<table class="table">
+  <thead >
+    <tr>
+      <th>Inventory</th>
+      <th>description</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @inventories.each do |inventory| %>
+          <tr>
+        <td> <%= link_to inventory.name, inventory_inventory_foods_path(inventory) %> </td>
+        <td><%= inventory.description %></td>
+        <td>
+        <%= form_for(inventory, method: :delete, data: { confirm: 'Are you sure you waant to delete this inventory? This action cant be udone.' }) do |f| %>
+          <%= f.submit 'Remove Item', class: 'btn btn-link' %>
+        <% end %>
+      </td>
+              </tr>
+    <% end %>
+  </tbody>
+
+</div>
+</div>

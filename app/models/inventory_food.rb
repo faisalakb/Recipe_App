@@ -1,5 +1,5 @@
+# app/models/inventory_food.rb
 class InventoryFood < ApplicationRecord
-    belongs_to :inventory
-    has_many :food
+  belongs_to :inventory
+  belongs_to :food
 end
-  

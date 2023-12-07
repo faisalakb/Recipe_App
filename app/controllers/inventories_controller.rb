@@ -1,12 +1,12 @@
-class InventoriesController < ApplicationController
-  before_action :validate_user, :set_inventory, only: [:show, :edit, :update, :destroy]
+class InventoriesController < ApplicationController#
+  before_action :validate_user, :set_inventory, only: [:edit, :update, :destroy]
 
   def index
     @inventories = Inventory.all
   end
 
   def show
-    # log for show
+    @inventory = Inventory.find(params[:id])
   end
 
   def new
@@ -36,10 +36,10 @@ class InventoriesController < ApplicationController
   end
 
   def destroy
-    @inventory.destroy
+    @inventory.destroy 
     redirect_to inventories_url, notice: 'Inventory was successfully destroyed.'
   end
-
+  
   private
 
   def validate_user

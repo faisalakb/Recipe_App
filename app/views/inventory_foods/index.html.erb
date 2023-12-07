@@ -3,6 +3,7 @@
 
 <div class="head-section">
 <h1>Inventory Foods</h1>
+<%= link_to 'View Inventory Shopping List', inventory_path(@inventory) if @inventory %>
 <%= link_to 'Add Food To Inventory' , new_inventory_inventory_food_path(@inventory) %>
 <%= link_to 'Back', inventories_path %>
 </div>

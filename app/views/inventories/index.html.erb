@@ -2,8 +2,9 @@
 <div class="center">
 <div class="head-section">
 <h1>Inventories</h1>
-<p> <%= link_to 'Home', "/" %> </p>
-<%= link_to 'Create Inventory', new_inventory_path %>
+<%= link_to 'Create New Inventory', new_inventory_path %>
+
+<p> <%= link_to 'Back To Home', "/" %> </p>
 </div>
 
 <% flash.each do |type, message| %>
@@ -27,9 +28,7 @@
         <td> <%= link_to inventory.name, inventory_inventory_foods_path(inventory) %> </td>
         <td><%= inventory.description %></td>
         <td>
-        <%= form_for(inventory, method: :delete, data: { confirm: 'Are you sure you waant to delete this inventory? This action cant be udone.' }) do |f| %>
-          <%= f.submit 'Remove Item', class: 'btn btn-link' %>
-        <% end %>
+        <%= link_to 'Remove item', inventory_path(inventory), method: :delete, data: { confirm: 'Are you sure you want to remove this item?' } %>
       </td>
               </tr>
     <% end %>

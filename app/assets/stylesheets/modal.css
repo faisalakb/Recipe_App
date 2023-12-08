@@ -164,9 +164,18 @@ body {
 
 .notice,
 .alert {
+  margin-top: 10%;
   text-align: center;
 }
 
-.recipes{
-  border:2px solid black;
+
+.Iform {
+  margin: auto;
+  width: 50%;
+}
+
+.Iform form {
+  width: 100%;
+  text-align: center;
+
 }

@@ -12,10 +12,7 @@
         <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "new-button", form: { 'data-turbo-frame': '_top' } %>
       <% end %>
     </div>
-   
-    <%# <% if public_list || (recipe.public? || (user_signed_in? && recipe.user == current_user)) %>
-      <%# <%= link_to "View Details", recipe_path(recipe), class: "new-recipe" %>
-    <%# <% end %> 
+
   </li>
    
 <% end %>

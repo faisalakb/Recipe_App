@@ -1,14 +1,15 @@
-<h1>Public Recipe List</h1>
-
-<ul class="public-recipes">
+<div class="container">
+<h1 class="head-section">Public Recipe List</h1>
+<ul class="recipes_list">
   <% @public_recipes.each do |recipe| %>
     <li>
-      <%= link_to "#{recipe.name} by #{recipe.user.name}", recipe_path(recipe) %>
+      <%= link_to "#{recipe.name} by #{recipe.user.name}", recipe_path(recipe), class: "recipe-name" %>
       <% if can? :destroy, recipe %>
-        <%= button_to "Delete", recipe, method: :delete, data: { confirm: "Are you sure you want to delete this recipe?" }, class: "delete-button" %>
+        <%= button_to "Delete", recipe, method: :delete, data: { confirm: "Are you sure you want to delete this recipe?" }, class: "click-me" %>
       <% end %>
     </li>
   <% end %>
 </ul>
 
 <%= link_to 'Back to Recipes List', recipes_path, class: "btn btn-link" %>
+</div>

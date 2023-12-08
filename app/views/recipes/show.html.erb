@@ -1,3 +1,4 @@
+<button class="click-me"><%= link_to 'Back to Recipes List', recipes_path, class: "custom-link" %></button>
 <h2 class='head-section recpTitle'><%= @recipe.name %></h2>
 
 <div class='container'>
@@ -10,6 +11,7 @@
       </span>
     <% end %>
   </div>
+  
 
   <h3>Cooking time: <%= @recipe.cooking_time %> hours</h3>
   <p>Steps go here...</p>
@@ -62,13 +64,13 @@
 
 <% if @recipe %>
   <table class="recipe-detail-table">
-    <!-- Add content for recipe details table if needed -->
+    <!-- recipe details table -->
   </table>
 <% else %>
   <p class="private-recipe-message">This recipe is private and cannot be viewed.</p>
 <% end %>
 
-<%= link_to 'Back to Recipes List', recipes_path, class: "btn btn-link" %>
+
 
 
 <div class="bd" id="popup" style="display: none;">

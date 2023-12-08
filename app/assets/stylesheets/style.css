@@ -62,7 +62,7 @@ li{
 .recipe_detail {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Change justify-content to space-between for better alignment */
+  justify-content: space-between; 
   align-items: center;
 }
 
@@ -106,3 +106,4 @@ li{
   text-decoration: none;
   color: inherit;
 }
+

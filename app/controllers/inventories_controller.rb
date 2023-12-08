@@ -1,5 +1,5 @@
-class InventoriesController < ApplicationController#
-  before_action :validate_user, :set_inventory, only: [:edit, :update, :destroy]
+class InventoriesController < ApplicationController
+  before_action :validate_user, :set_inventory, only: %i[edit update destroy]
 
   def index
     @inventories = Inventory.all
@@ -24,7 +24,7 @@ class InventoriesController < ApplicationController#
   end
 
   def edit
-  #  logic for edit
+    #  logic for edit
   end
 
   def update
@@ -36,19 +36,18 @@ class InventoriesController < ApplicationController#
   end
 
   def destroy
-    @inventory.destroy 
+    @inventory.destroy
     redirect_to inventories_url, notice: 'Inventory was successfully destroyed.'
   end
-  
+
   private
 
   def validate_user
-    unless @inventory && (current_user.id == @inventory.user_id || current_user.admin?)
-      flash[:alert] = 'You do not have permission to delete this item.'
-      redirect_back fallback_location: root_path
-    end
-  end
+    return if @inventory && (current_user.id == @inventory.user_id || current_user.admin?)
 
+    flash[:alert] = 'You do not have permission to delete this item.'
+    redirect_back fallback_location: root_path
+  end
 
   def set_inventory
     @inventory = Inventory.find(params[:id])

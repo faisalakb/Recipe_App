@@ -1,0 +1,96 @@
+<h2 class='head-section recpTitle'><%= @recipe.name %></h2>
+
+<div class='container'>
+  <div class='indRecipeDetail'>
+    <h3>Preparation time:  <%= @recipe.preparation_time %>hours </h3>
+    <% if can? :destroy, @recipe %>
+      <span class="public-btn">
+        Public
+        <%= check_box_tag 'recipe[public]', 1, @recipe.public, disabled: !can?(:destroy, @recipe) %>
+      </span>
+    <% end %>
+  </div>
+
+  <h3>Cooking time: <%= @recipe.cooking_time %> hours</h3>
+  <p>Steps go here...</p>
+
+  <div class="btnContainer">
+    <button id="openPopup" class="btn btn-primary">Generate Shopping List</button>
+
+   
+    <% if can? :update, @recipe %>
+      <button class="btn btn-primary addIng">
+        <%= link_to "Add ingredient", new_recipe_path(@recipe), class: "custom-link" %>
+      </button>
+    <% end %>
+  </div>
+  <hr>
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @foods.present? %>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= number_to_currency(food.price) %></td>
+          <td><%= food.quantity %></td>
+          <td>
+            <% if current_user == food.user %>
+              <%= link_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure you want to delete #{food.name} from the database?" } %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="5">No foods available.</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<% if @recipe %>
+  <table class="recipe-detail-table">
+    <!-- Add content for recipe details table if needed -->
+  </table>
+<% else %>
+  <p class="private-recipe-message">This recipe is private and cannot be viewed.</p>
+<% end %>
+
+<%= link_to 'Back to Recipes List', recipes_path, class: "btn btn-link" %>
+
+
+<div class="bd" id="popup" style="display: none;">
+  <h2>Generating Shopping List</h2>
+  <p>Choose an inventory:</p>
+  <select id="inventorySelect">
+    <option value="inventory1">Inventory 1</option>
+    <option value="inventory2">Inventory 2</option>
+    <option value="inventory3">Inventory 3</option>
+  </select>
+  <button onclick="generateShoppingList()">Generate</button>
+  <button id="closePopup" class="close">&times;</button>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#openPopup").click(function() {
+      $("#popup").show();
+    });
+
+    $("#closePopup").click(function() {
+      $("#popup").hide();
+    });
+  });
+</script>

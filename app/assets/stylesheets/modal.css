@@ -17,9 +17,16 @@ body {
 }
 
 .head-section {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  border: 2px solid red;
+
+}
+
+.recpTitle{
+  margin-left: 50%;
+  
 }
 
 #click {
@@ -161,6 +168,7 @@ body {
   text-align: center;
 }
 
+
 .Iform {
   margin: auto;
   width: 50%;
@@ -169,4 +177,5 @@ body {
 .Iform form {
   width: 100%;
   text-align: center;
+
 }

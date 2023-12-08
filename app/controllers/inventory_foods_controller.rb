@@ -1,6 +1,6 @@
 class InventoryFoodsController < ApplicationController
   before_action :set_inventory
-  before_action :set_inventory_food, only: [ :update, :destroy]
+  before_action :set_inventory_food, only: %i[update destroy]
 
   def index
     @inventory_foods = @inventory.inventory_foods

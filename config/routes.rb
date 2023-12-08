@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
   # root to: 'recipes#index'
 
-  # get '/foods/:id', to: 'foods#show', as: 'food'
-  get '/missing_foods', to: 'foods#missing_foods'
-  
+  get '/foods/:id', to: 'foods#show', as: 'food'
+  get '/generalshoppinglist', to: 'generalshoppinglist#index'
+  get '/public_recipes', to: 'recipes#public_list', as: 'public_recipes'
+  get '/GeneralShoppingList', to: 'general_shopping_list#index', as: 'general_shopping_list'
+
   resources :foods, except: [:index] do
     collection do
       get 'missing_foods'

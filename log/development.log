@@ -24594,3 +24594,289 @@ Processing by FoodsController#index as HTML
 Completed 200 OK in 54ms (Views: 48.0ms | ActiveRecord: 1.3ms | Allocations: 17263)
 
 
+Started GET "/" for ::1 at 2023-12-08 18:16:15 +0000
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (1.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  Rendered foods/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 12159)
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 34689)
+Completed 200 OK in 262ms (Views: 96.6ms | ActiveRecord: 17.4ms | Allocations: 47139)
+
+
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:16:22 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 2633)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Food' to association named 'recipes'; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:28:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:19:44 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Pluck (3.8ms)[0m  [1m[34mSELECT "food_id" FROM "recipes" INNER JOIN "recipe_foods" ON "recipe_foods"."recipe_id" = "recipes"."id" INNER JOIN "foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `missing_foods'
+  [1m[36mFood Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6)[0m  [["user_id", 1], ["id", 1], ["id", 10], ["id", 8], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:29:in `missing_foods'
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6)[0m  [["user_id", 1], ["id", 1], ["id", 10], ["id", 8], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:30:in `missing_foods'
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 31.0ms | Allocations: 21913)
+
+
+  
+ActiveRecord::AssociationNotFoundError (Association named 'recipes' was not found on Food; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:30:in `missing_foods'
+Started GET "/" for ::1 at 2023-12-08 18:20:06 +0000
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:21
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  Rendered foods/index.html.erb within layouts/application (Duration: 33.6ms | Allocations: 9058)
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 31605)
+Completed 200 OK in 104ms (Views: 96.4ms | ActiveRecord: 1.4ms | Allocations: 33891)
+
+
+Started GET "/" for ::1 at 2023-12-08 18:20:09 +0000
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:21
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/foods/index.html.erb:28
+  Rendered foods/index.html.erb within layouts/application (Duration: 36.4ms | Allocations: 6912)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 15557)
+Completed 200 OK in 74ms (Views: 65.8ms | ActiveRecord: 2.7ms | Allocations: 17227)
+
+
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:20:15 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Pluck (0.7ms)[0m  [1m[34mSELECT "food_id" FROM "recipes" INNER JOIN "recipe_foods" ON "recipe_foods"."recipe_id" = "recipes"."id" INNER JOIN "foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `missing_foods'
+  [1m[36mFood Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6)[0m  [["user_id", 1], ["id", 1], ["id", 10], ["id", 8], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:29:in `missing_foods'
+  [1m[36mFood Load (0.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6)[0m  [["user_id", 1], ["id", 1], ["id", 10], ["id", 8], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:30:in `missing_foods'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.2ms | Allocations: 4010)
+
+
+  
+ActiveRecord::AssociationNotFoundError (Association named 'recipes' was not found on Food; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:30:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:21:02 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 10.8ms | Allocations: 10919)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Food' to association named 'recipes'; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:28:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:23:54 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFood Count (49.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN (SELECT DISTINCT "food_id" FROM "recipes" WHERE "recipes"."user_id" = $2)[0m  [["user_id", 1], ["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:30:in `missing_foods'
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 62.8ms | Allocations: 14361)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column "food_id" does not exist
+LINE 1: ...id" = $1 AND "foods"."id" NOT IN (SELECT DISTINCT "food_id" ...
+                                                             ^
+):
+  
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:26:28 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 9.5ms | Allocations: 10922)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Food' to association named 'recipe_foods'; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:28:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:27:44 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 11.9ms | Allocations: 10574)
+
+
+  
+NoMethodError (undefined method `recipe_foods' for #<User:0x0000019873932490>):
+  
+app/controllers/foods_controller.rb:28:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:28:15 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 9.0ms | Allocations: 10557)
+
+
+  
+NoMethodError (undefined method `recipe' for #<User:0x00000198717e7f88>):
+  
+app/controllers/foods_controller.rb:28:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:28:30 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Pluck (0.8ms)[0m  [1m[34mSELECT "food_id" FROM "recipes" INNER JOIN "recipe_foods" ON "recipe_foods"."recipe_id" = "recipes"."id" INNER JOIN "foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `missing_foods'
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `missing_foods'
+  Rendering layout layouts/application.html.erb
+  Rendering foods/missing_foods.html.erb within layouts/application
+  Rendered foods/missing_foods.html.erb within layouts/application (Duration: 1.6ms | Allocations: 753)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | Allocations: 23339)
+Completed 200 OK in 154ms (Views: 82.8ms | ActiveRecord: 14.0ms | Allocations: 44093)
+
+
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:29:20 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Pluck (0.7ms)[0m  [1m[34mSELECT "food_id" FROM "recipes" INNER JOIN "recipe_foods" ON "recipe_foods"."recipe_id" = "recipes"."id" INNER JOIN "foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `missing_foods'
+  [1m[36mFood Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6)[0m  [["user_id", 1], ["id", 1], ["id", 10], ["id", 8], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:29:in `missing_foods'
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6)[0m  [["user_id", 1], ["id", 1], ["id", 10], ["id", 8], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:30:in `missing_foods'
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 11.5ms | Allocations: 20315)
+
+
+  
+ActiveRecord::AssociationNotFoundError (Association named 'recipes' was not found on Food; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:30:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:32:37 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 6.7ms | Allocations: 10920)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Food' to association named 'recipes'; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:28:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:34:45 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 8.3ms | Allocations: 10917)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Food' to association named 'recipes'; perhaps you misspelled it?):
+  
+app/controllers/foods_controller.rb:28:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:35:52 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Pluck (0.7ms)[0m  [1m[34mSELECT "food_id" FROM "recipes" INNER JOIN "recipe_foods" ON "recipe_foods"."recipe_id" = "recipes"."id" INNER JOIN "foods" ON "foods"."id" = "recipe_foods"."food_id" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `missing_foods'
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `missing_foods'
+  Rendering layout layouts/application.html.erb
+  Rendering foods/missing_foods.html.erb within layouts/application
+  Rendered foods/missing_foods.html.erb within layouts/application (Duration: 2.3ms | Allocations: 753)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 23336)
+Completed 200 OK in 143ms (Views: 73.7ms | ActiveRecord: 11.6ms | Allocations: 44038)
+
+
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:38:23 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:32:in `flat_map'
+  [1m[36mRecipeFood Load (0.6ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" IN ($1, $2, $3, $4, $5, $6)[0m  [["recipe_id", 1], ["recipe_id", 2], ["recipe_id", 4], ["recipe_id", 5], ["recipe_id", 8], ["recipe_id", 10]]
+  ↳ app/controllers/foods_controller.rb:32:in `flat_map'
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 8], ["id", 10], ["id", 4], ["id", 2], ["id", 3]]
+  ↳ app/controllers/foods_controller.rb:32:in `flat_map'
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 20.1ms | Allocations: 33188)
+
+
+  
+NoMethodError (undefined method `count' for nil:NilClass):
+  
+app/controllers/foods_controller.rb:37:in `missing_foods'
+Started GET "/missing_foods" for ::1 at 2023-12-08 18:39:50 +0000
+Processing by FoodsController#missing_foods as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/foods_controller.rb:32:in `flat_map'
+  [1m[36mRecipeFood Load (0.5ms)[0m  [1m[34mSELECT "recipe_foods".* FROM "recipe_foods" WHERE "recipe_foods"."recipe_id" IN ($1, $2, $3, $4, $5, $6)[0m  [["recipe_id", 1], ["recipe_id", 2], ["recipe_id", 4], ["recipe_id", 5], ["recipe_id", 8], ["recipe_id", 10]]
+  ↳ app/controllers/foods_controller.rb:32:in `flat_map'
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" IN ($1, $2, $3, $4, $5, $6)[0m  [["id", 1], ["id", 8], ["id", 10], ["id", 4], ["id", 2], ["id", 3]]
+  ↳ app/controllers/foods_controller.rb:32:in `flat_map'
+  [1m[36mFood Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6, $7, $8)[0m  [["user_id", 1], ["id", 1], ["id", 8], ["id", 8], ["id", 1], ["id", 10], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:37:in `missing_foods'
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1 AND "foods"."id" NOT IN ($2, $3, $4, $5, $6, $7, $8)[0m  [["user_id", 1], ["id", 1], ["id", 8], ["id", 8], ["id", 1], ["id", 10], ["id", 4], ["id", 2]]
+  ↳ app/controllers/foods_controller.rb:38:in `missing_foods'
+  Rendering layout layouts/application.html.erb
+  Rendering foods/missing_foods.html.erb within layouts/application
+  Rendered foods/missing_foods.html.erb within layouts/application (Duration: 1.4ms | Allocations: 550)
+  Rendered layout layouts/application.html.erb (Duration: 60.0ms | Allocations: 23133)
+Completed 200 OK in 169ms (Views: 67.1ms | ActiveRecord: 17.5ms | Allocations: 53731)
+
+

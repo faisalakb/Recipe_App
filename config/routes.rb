@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-
   resources :recipes, only: [:index, :show, :new, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -23,6 +22,6 @@ Rails.application.routes.draw do
   end
 
   resources :inventories do
-    resources :inventory_foods, only: [:index, :create, :update, :destroy]
-  end
+    resources :inventory_foods, only: [:index, :new, :create, :show, :update, :destroy]
+  end  
 end

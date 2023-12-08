@@ -81,8 +81,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_143428) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "inventories", "users", column: "user_id"
-  add_foreign_key "inventory_foods", "foods", column: "food_id"
-  add_foreign_key "inventory_foods", "inventories", column: "inventory_id"
+  add_foreign_key "inventories", "users"
+  add_foreign_key "inventory_foods", "foods"
+  add_foreign_key "inventory_foods", "inventories"
   add_foreign_key "recipes", "users"
 end

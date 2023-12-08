@@ -3,7 +3,12 @@ class FoodsController < ApplicationController
 
   def index
       # @foods = current_user.foods
-      @foods = Food.all
+      if params[:id] == 'missing_foods'
+        missing_foods
+        render :missing_foods
+      else
+        @foods = Food.all
+      end
   end
 
   def show

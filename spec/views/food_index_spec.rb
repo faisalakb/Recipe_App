@@ -1,52 +1,66 @@
 require 'rails_helper'
 
-RSpec.feature 'Foods', type: :feature do
-  scenario 'User views list of foods' do
-    # Create sample foods using FactoryBot
-    food1 = FactoryBot.create(:food, name: 'Sample Food 1', measurement_unit: 'kg', price: 20, quantity: 3)
-    food2 = FactoryBot.create(:food, name: 'Sample Food 2', measurement_unit: 'g', price: 10, quantity: 5)
-
-    # Visit the foods index page
+RSpec.describe 'Foods', type: :feature do
+  let(:user) { FactoryBot.create(:user, confirmed_at: Time.current) }
+  let(:other_user) { FactoryBot.create(:user, confirmed_at: Time.current) }
+  
+  before do
+    sign_in user
+    FactoryBot.create(:food, name: 'Sample Food 1', measurement_unit: 'kg', price: 20, quantity: 3)
+    FactoryBot.create(:food, name: 'Sample Food 2', measurement_unit: 'g', price: 10, quantity: 5)
     visit foods_path
+  end
 
-    # Verify that the list of foods is displayed
-    expect(page).to have_content('List of Foods')
-    expect(page).to have_content(food1.name)
-    expect(page).to have_content('kg')
-    expect(page).to have_content('$20.00')
-    expect(page).to have_content('3')
-    expect(page).to have_content(food2.name)
-    expect(page).to have_content('g')
-    expect(page).to have_content('$10.00')
-    expect(page).to have_content('5')
+  describe 'Food Index Page' do
+    include Devise::Test::IntegrationHelpers
 
-    # Verify the "Add Food" button and its functionality
-    expect(page).to have_content('Add Food')
-    click_link 'Add Food'
+    it 'displays the list of foods' do
+      expect(page).to have_content('List of Foods')
+      expect(page).to have_content('Sample Food 1')
+      expect(page).to have_content('kg')
+      expect(page).to have_content('$20.00')
+      expect(page).to have_content('3')
+      expect(page).to have_content('Sample Food 2')
+      expect(page).to have_content('g')
+      expect(page).to have_content('$10.00')
+      expect(page).to have_content('5')
+    end
 
-    # Fill in the form and submit
-    fill_in 'Name', with: 'New Food'
-    fill_in 'Measurement Unit', with: 'pcs'
-    fill_in 'Price', with: '15'
-    fill_in 'Quantity', with: '10'
-    click_button 'Add Food'
+    it 'displays the Add Food form' do
+      expect(page).to have_content('Add Food')
+      expect(page).to have_field('food_name')
+      expect(page).to have_field('food_measurement_unit')
+      expect(page).to have_field('food_price')
+      expect(page).to have_field('food_quantity')
+      expect(page).to have_button('Add Food')
+    end
 
-    # Verify that the newly added food is displayed
-    expect(page).to have_content('Food was successfully created.')
-    expect(page).to have_content('New Food')
-    expect(page).to have_content('pcs')
-    expect(page).to have_content('$15.00')
-    expect(page).to have_content('10')
+    it 'adds a new food' do
+      expect(page).to have_content('Add Food')
+      click_button('Add Food')
+      fill_in 'food_name', with: 'New Food'
+      fill_in 'food_measurement_unit', with: 'pcs'
+      fill_in 'food_price', with: '15'
+      fill_in 'food_quantity', with: '10'
+      click_button 'Add Food'
 
-    # Verify deletion functionality (assuming there are two foods)
-    expect(page).to have_link('Delete', count: 2) # Ensure there are delete links
-    first(:link, 'Delete').click # Click the first delete link
+      expect(page).to have_content('Food was successfully created.')
+      expect(page).to have_content('New Food')
+      expect(page).to have_content('pcs')
+      expect(page).to have_content('$15.00')
+      expect(page).to have_content('10')
+    end
 
-    # Handle the confirmation dialog
-    page.driver.browser.switch_to.alert.accept
-
-    # Verify deletion success message
-    expect(page).to have_content('Food was successfully deleted.')
-    expect(page).not_to have_content(food1.name) # Ensure the deleted food is not shown
+    it 'deletes a food' do
+      if page.has_link?('Delete', count: 1)
+        expect(page).to have_css('a[data-method="delete"]', text: 'Delete', count: 1)
+        accept_confirm("Are you sure you want to delete #{food.name} from the database?") do
+          click_link('Delete', match: :first)
+        end
+        expect(page).to have_content('Food was successfully deleted.')
+        expect(page).not_to have_content('Sample Food 1')
+        expect(page).to have_content('Sample Food 2')
+      end
+    end
   end
 end

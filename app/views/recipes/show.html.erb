@@ -1,55 +1,63 @@
-<h2 class='head-section'><%= @recipe.name %></h2>
+<h2 class='head-section recpTitle'><%= @recipe.name %></h2>
 
 <div class='container'>
-  <div class='show-recipe-left'>
-    <p>Preparation time: <%= @recipe.preparation_time %> hours</p>
+  <div class='indRecipeDetail'>
+    <h3>Preparation time:  <%= @recipe.preparation_time %>hours </h3>
     <% if can? :destroy, @recipe %>
-      <div>
+      <span class="public-btn">
         Public
         <%= check_box_tag 'recipe[public]', 1, @recipe.public, disabled: !can?(:destroy, @recipe) %>
-      </div>
+      </span>
     <% end %>
   </div>
 
-  <p>Cooking time: <%= @recipe.cooking_time %> hours</p>
+  <h3>Cooking time: <%= @recipe.cooking_time %> hours</h3>
   <p>Steps go here...</p>
 
-  <div class='show-recipe-left'>
-    <button id="openPopup">Open Popup</button>
+  <div class="btnContainer">
+    <button id="openPopup" class="btn btn-primary">Generate Shopping List</button>
 
    
     <% if can? :update, @recipe %>
-      <button class="new-button">
-        <%= link_to "Add ingredient", new_recipe_path(@recipe), class: "new-recipe" %>
+      <button class="btn btn-primary addIng">
+        <%= link_to "Add ingredient", new_recipe_path(@recipe), class: "custom-link" %>
       </button>
     <% end %>
   </div>
   <hr>
 
-  <table class="table-foods">
-    <% if @foods.nil? %>
-      <tr class="no-recipes">
-        <td colspan="5">There are no foods yet.</td>
-      </tr>
-    <% else %>
-      <thead class="header-foods">
-        <tr class="first-row">
-          <th class="fr-food">Food</th>
-          <% if view == 'foods' %>
-            <th class="fr-food">Measurement Unit</th>
-            <th class="fr-food">Unit price</th>
-          <% end %>
-          <th class="fr-food">Quantity</th>
-          <th class="fr-food">Actions</th>
+ <table class="table">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @foods.present? %>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= number_to_currency(food.price) %></td>
+          <td><%= food.quantity %></td>
+          <td>
+            <% if current_user == food.user %>
+              <%= link_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure you want to delete #{food.name} from the database?" } %>
+            <% end %>
+          </td>
         </tr>
-      </thead>
-      <tbody class="body-foods">
-        <% @foods.each_with_index do |food, index| %>
-          <%= render partial: 'shared/food', locals: { food: food, index: index+1, view: view } %>
-        <% end %>
-      </tbody>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="5">No foods available.</td>
+      </tr>
     <% end %>
-  </table>
+  </tbody>
+</table>
 </div>
 
 <% if @recipe %>

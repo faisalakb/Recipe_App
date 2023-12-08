@@ -1,17 +1,21 @@
 <% if recipe %>
-  <li class="recipe">
-    <div class="recipe-title-btn">
+  <li class="recipes_list">
+    <div class="recipe_detail">
       <h1 class="recipe-name">
-        <%= link_to recipe.name, recipe, class: "recipe-name" %>
+        <%= link_to recipe.name, recipe  %>
       </h1>
-      <% if can? :destroy, recipe %>
+      <p class="recipe-des"> <%= recipe.description %></p>
+     
+    </div>
+    <div>
+     <% if can? :destroy, recipe %>
         <%= button_to "Remove", recipe, method: :delete, data: { confirm: "Are you sure?" }, class: "new-button", form: { 'data-turbo-frame': '_top' } %>
       <% end %>
     </div>
-    <p class="recipe-des"> <%= recipe.description %></p>
-
-    <% if public_list || (recipe.public? || (user_signed_in? && recipe.user == current_user)) %>
-      <%= link_to "View Details", recipe_path(recipe), class: "new-recipe" %>
-    <% end %>
+   
+    <%# <% if public_list || (recipe.public? || (user_signed_in? && recipe.user == current_user)) %>
+      <%# <%= link_to "View Details", recipe_path(recipe), class: "new-recipe" %>
+    <%# <% end %> 
   </li>
+   
 <% end %>

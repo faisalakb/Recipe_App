@@ -45,3 +45,64 @@
 #closePopup:hover {
   color: #333;
 }
+
+
+li{
+  list-style: none;
+}
+
+.recipes_list {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  position: relative;
+  list-style: none; 
+}
+
+.recipe_detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Change justify-content to space-between for better alignment */
+  align-items: center;
+}
+
+.recipe-title-btn {
+  display: flex;
+  align-items: center;
+}
+
+.recipe-name {
+  font-size: 1.5em;
+  margin: 0; 
+}
+
+.recipe-des {
+  margin: 10px 0;
+  margin-left: auto; 
+}
+
+.indRecipeDetail{
+  display: flex;
+  flex-direction: row;
+}
+
+.public-btn{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.btnContainer{
+  display: flex;
+  flex-direction: row;
+  margin-top: 90px;
+}
+
+.addIng{
+  margin-left: auto;
+}
+
+.custom-link{
+  text-decoration: none;
+  color: inherit;
+}

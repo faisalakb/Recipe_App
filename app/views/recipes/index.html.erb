@@ -1,14 +1,14 @@
-<div class="main-container">
-  <div class="recipes-container">
+<div class="container">
+  <div class="head-section">
     <h1 class="page-title">Recipes</h1>
   </div>
 
-  <ul class="recipes">
+  <ul >
     <% if @recipes.empty? %>
-      <li class="no-recipes">There are no public recipes yet.</li>
+      <li >No public recipes.</li>
     <% else %>
       <% @recipes.each do |recipe| %>
-        <%= render partial: 'common_features/recipe', locals: { recipe: recipe, public_list: true } %>
+        <%=  render partial: 'common_features/recipe', locals: { recipe: recipe, public_list: true }  %>
       <% end %>
     <% end %>
   </ul>

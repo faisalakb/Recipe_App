@@ -21,12 +21,14 @@
 
    
     <% if can? :update, @recipe %>
-      <button class="btn btn-primary addIng">
-        <%= link_to "Add ingredient", new_recipe_path(@recipe), class: "custom-link" %>
-      </button>
+    
+        <label for="click" class="addIng click-me">Add Food</label>
+
     <% end %>
   </div>
   <hr>
+
+  
 
  <table class="table">
   <thead>

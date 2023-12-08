@@ -8,7 +8,7 @@ RSpec.describe 'foods/missing_foods.html.erb', type: :view do
     food1 = Food.new(name: 'Food 1', quantity: 2, price: 10)
     food2 = Food.new(name: 'Food 2', quantity: 3, price: 15)
     assign(:missing_foods, [food1, food2])
-    
+
     render
   end
 

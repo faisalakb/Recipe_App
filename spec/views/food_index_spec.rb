@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Foods', type: :feature do
   let(:user) { FactoryBot.create(:user, confirmed_at: Time.current) }
   let(:other_user) { FactoryBot.create(:user, confirmed_at: Time.current) }
-  
+
   before do
     sign_in user
     FactoryBot.create(:food, name: 'Sample Food 1', measurement_unit: 'kg', price: 20, quantity: 3)

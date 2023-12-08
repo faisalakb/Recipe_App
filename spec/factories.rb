@@ -7,11 +7,10 @@ FactoryBot.define do
     quantity { 3 }
     association :user
   end
-  
+
   factory :user do
     name { 'John Doe' }
     sequence(:email) { |n| "john#{n}@example.com" }
     password { 'password' }
   end
 end
-  

@@ -25,6 +25,7 @@
   background: black;
   color: white;
 }
+
 .nav-container {
   position: fixed;
   width: 100%;
@@ -37,7 +38,8 @@
   padding-left: 10px;
 }
 
-.nav-container a, .user {
+.nav-container a,
+.user {
   text-decoration: none;
   color: #fff;
 }

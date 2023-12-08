@@ -2,13 +2,13 @@ class FoodsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-      # @foods = current_user.foods
-      if params[:id] == 'missing_foods'
-        missing_foods
-        render :missing_foods
-      else
-        @foods = Food.all
-      end
+    # @foods = current_user.foods
+    if params[:id] == 'missing_foods'
+      missing_foods
+      render :missing_foods
+    else
+      @foods = Food.all
+    end
   end
 
   def show

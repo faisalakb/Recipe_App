@@ -1,4 +1,4 @@
-require 'rails_helper' 
+require 'rails_helper'
 
 RSpec.describe FoodsController, type: :controller do
   include Devise::Test::ControllerHelpers
@@ -7,13 +7,12 @@ RSpec.describe FoodsController, type: :controller do
 
   describe 'GET #index' do
     context 'when user is authenticated' do
-      
       it 'renders the index template' do
         user = create(:user)
         sign_in user
 
         get :index
-      
+
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -28,7 +27,7 @@ RSpec.describe FoodsController, type: :controller do
 
   describe 'GET #show' do
     context 'when params[:id] is a valid food id' do
-      let(:food) { create(:food, user: user) } # Assuming a Food factory is set up
+      let(:food) { create(:food, user:) } # Assuming a Food factory is set up
 
       it 'renders the show template' do
         sign_in user # Sign in the user
@@ -41,11 +40,10 @@ RSpec.describe FoodsController, type: :controller do
   end
 
   describe 'GET #new' do
-
     it 'renders the new template' do
-        sign_in user # Sign in the user
+      sign_in user # Sign in the user
 
-        get :new
+      get :new
       expect(response).to redirect_to(new_user_session_path)
     end
   end

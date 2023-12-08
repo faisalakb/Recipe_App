@@ -1,62 +1,52 @@
-# spec/features/foods_spec.rb
-
 require 'rails_helper'
 
 RSpec.feature 'Foods', type: :feature do
-  let(:user) { create(:user) } # Assuming you have a factory set up for User
-
-  before do
-    sign_in user
-  end
-
   scenario 'User views list of foods' do
-    food1 = create(:food, user: user, name: 'Apple', measurement_unit: 'Piece', price: 1.99, quantity: 5)
-    food2 = create(:food, user: user, name: 'Banana', measurement_unit: 'Piece', price: 2.49, quantity: 3)
+    # Create sample foods using FactoryBot
+    food1 = FactoryBot.create(:food, name: 'Sample Food 1', measurement_unit: 'kg', price: 20, quantity: 3)
+    food2 = FactoryBot.create(:food, name: 'Sample Food 2', measurement_unit: 'g', price: 10, quantity: 5)
 
+    # Visit the foods index page
     visit foods_path
 
+    # Verify that the list of foods is displayed
     expect(page).to have_content('List of Foods')
-    expect(page).to have_content('Add Food')
-
-    expect(page).to have_content('Apple')
-    expect(page).to have_content('Piece')
-    expect(page).to have_content('$1.99')
+    expect(page).to have_content(food1.name)
+    expect(page).to have_content('kg')
+    expect(page).to have_content('$20.00')
+    expect(page).to have_content('3')
+    expect(page).to have_content(food2.name)
+    expect(page).to have_content('g')
+    expect(page).to have_content('$10.00')
     expect(page).to have_content('5')
 
-    expect(page).to have_content('Banana')
-    expect(page).to have_content('Piece')
-    expect(page).to have_content('$2.49')
-    expect(page).to have_content('3')
-  end
-
-  scenario 'User adds a new food' do
-    visit foods_path
-
+    # Verify the "Add Food" button and its functionality
+    expect(page).to have_content('Add Food')
     click_link 'Add Food'
 
-    fill_in 'food_name', with: 'Orange'
-    fill_in 'food_measurement_unit', with: 'Piece'
-    fill_in 'food_price', with: '2.00'
-    fill_in 'food_quantity', with: '4'
-
+    # Fill in the form and submit
+    fill_in 'Name', with: 'New Food'
+    fill_in 'Measurement Unit', with: 'pcs'
+    fill_in 'Price', with: '15'
+    fill_in 'Quantity', with: '10'
     click_button 'Add Food'
 
-    expect(page).to have_content('List of Foods')
-    expect(page).to have_content('Orange')
-    expect(page).to have_content('Piece')
-    expect(page).to have_content('$2.00')
-    expect(page).to have_content('4')
-  end
+    # Verify that the newly added food is displayed
+    expect(page).to have_content('Food was successfully created.')
+    expect(page).to have_content('New Food')
+    expect(page).to have_content('pcs')
+    expect(page).to have_content('$15.00')
+    expect(page).to have_content('10')
 
-  scenario 'User deletes a food' do
-    food = create(:food, user: user, name: 'Pear', measurement_unit: 'Piece', price: 1.50, quantity: 2)
+    # Verify deletion functionality (assuming there are two foods)
+    expect(page).to have_link('Delete', count: 2) # Ensure there are delete links
+    first(:link, 'Delete').click # Click the first delete link
 
-    visit foods_path
+    # Handle the confirmation dialog
+    page.driver.browser.switch_to.alert.accept
 
-    expect(page).to have_content('Pear')
-
-    accept_confirm { click_link 'Delete' }
-
-    expect(page).to_not have_content('Pear')
+    # Verify deletion success message
+    expect(page).to have_content('Food was successfully deleted.')
+    expect(page).not_to have_content(food1.name) # Ensure the deleted food is not shown
   end
 end

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe FoodsController, type: :controller do
   include Devise::Test::ControllerHelpers
 
-  let(:user) { User.find_or_create_by(email: 'test@example.com') }
-  
+  let(:user) { create(:user) } # Create a valid user using a factory
+
   describe 'GET #index' do
     context 'when user is authenticated' do
       

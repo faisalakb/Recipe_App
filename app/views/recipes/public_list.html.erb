@@ -3,7 +3,7 @@
 <ul class="recipes_list">
   <% @public_recipes.each do |recipe| %>
     <li>
-      <%= link_to "#{recipe.name} by #{recipe.user.name}", recipe_path(recipe), class: "recipe-name" %>
+      <%= link_to raw("#{recipe.name} <br> By:  #{recipe.user.name}"), recipe_path(recipe), class: "recipe-name" %>
       <% if can? :destroy, recipe %>
         <%= button_to "Delete", recipe, method: :delete, data: { confirm: "Are you sure you want to delete this recipe?" }, class: "click-me" %>
       <% end %>

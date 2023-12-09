@@ -18,7 +18,11 @@
     <%= stylesheet_link_tag "register", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+    <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
     <%= javascript_include_tag 'rails-ujs' %>
+    <%= javascript_include_tag 'custom', 'data-turbolinks-track': 'reload' %>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
@@ -52,6 +56,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+
     <%= yield %>
 
     <script>
@@ -63,11 +68,11 @@
           var ascending = $(this).hasClass("asc");
           $(this).toggleClass("asc desc");
 
-          var columnIndex = $(this).index(); // Get the index of the clicked column header
+          var columnIndex = $(this).index();
 
           rows.sort(function(a, b) {
-            var aValue = $(a).find("td").eq(columnIndex).text(); // Get the value of the corresponding column in row a
-          var bValue = $(b).find("td").eq(columnIndex).text(); // Get the value of the corresponding column in row b
+            var aValue = $(a).find("td").eq(columnIndex).text(); 
+          var bValue = $(b).find("td").eq(columnIndex).text(); 
             return ascending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue);
           });
 
@@ -77,5 +82,6 @@
         $(".sortable").first().addClass("asc");
       });
     </script>
+
   </body>
 </html>

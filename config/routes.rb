@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-
   resources :recipes, only: [:index, :show, :new, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,9 +12,11 @@ Rails.application.routes.draw do
   get '/foods', to: 'foods#index', as: 'foods'
   # root to: 'recipes#index'
 
-  # get '/foods/:id', to: 'foods#show', as: 'food'
-  get '/missing_foods', to: 'foods#missing_foods'
-  
+  get '/foods/:id', to: 'foods#show', as: 'food'
+  get '/generalshoppinglist', to: 'generalshoppinglist#index'
+  get '/public_recipes', to: 'recipes#public_list', as: 'public_recipes'
+  get '/GeneralShoppingList', to: 'general_shopping_list#index', as: 'general_shopping_list'
+
   resources :foods, except: [:index] do
     collection do
       get 'missing_foods'
@@ -23,6 +24,6 @@ Rails.application.routes.draw do
   end
 
   resources :inventories do
-    resources :inventory_foods, only: [:index, :create, :update, :destroy]
-  end
+    resources :inventory_foods, only: [:index, :new, :create, :show, :update, :destroy]
+  end  
 end

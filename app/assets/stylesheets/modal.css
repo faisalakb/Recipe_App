@@ -11,15 +11,21 @@ body {
   width: 80%;
   padding: 10px;
   position: absolute;
-  top: 60%;
+  top: 64%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .head-section {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
+
+}
+
+.recpTitle{
+  margin-left: 50%;
+  
 }
 
 #click {
@@ -59,6 +65,7 @@ body {
   border-radius: 3px;
   cursor: pointer;
   transition: 0.5s;
+  text-decoration: none;
 }
 
 .click-me:hover {
@@ -159,4 +166,16 @@ body {
 .alert {
   margin-top: 10%;
   text-align: center;
+}
+
+
+.Iform {
+  margin: auto;
+  width: 50%;
+}
+
+.Iform form {
+  width: 100%;
+  text-align: center;
+
 }

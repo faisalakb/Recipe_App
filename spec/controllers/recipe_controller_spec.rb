@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RecipesController, type: :controller do
   let(:user) { FactoryBot.create(:user) }
-  let(:recipe) { FactoryBot.create(:recipe, user:) }
+  let(:recipe) { FactoryBot.create(:recipe, user: user) }
 
   describe 'GET #index' do
     it 'renders the index template' do

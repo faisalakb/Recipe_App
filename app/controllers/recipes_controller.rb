@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:foods).all
     @foods = Food.all
   end
 
@@ -28,27 +28,12 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.includes(:foods).find(params[:id])
     @foods = @recipe.foods
-    @inventory = @recipe.inventory
-    @inventories = Inventory.all
-  end
-
-  def associate_inventory
-    @recipe = Recipe.find(params[:id])
-    inventory_id = params[:inventory_id]
-
-    if inventory_id.present?
-      inventory = Inventory.find(inventory_id)
-      @recipe.update(inventory:)
-      redirect_to inventory_path(inventory), notice: 'Inventory added to the recipe successfully!'
-    else
-      redirect_to @recipe, alert: 'Please select an inventory.'
-    end
   end
 
   def public_list
-    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
+    @public_recipes = Recipe.includes(:foods).where(public: true).order(created_at: :desc)
   end
 
   private

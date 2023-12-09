@@ -106,14 +106,11 @@ li {
   text-decoration: none;
   color: inherit;
 }
-<<<<<<< HEAD
 
-.mid-sec {
+head .mid-sec {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 10px;
 }
-=======
->>>>>>> dev

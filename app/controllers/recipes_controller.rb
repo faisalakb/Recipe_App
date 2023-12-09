@@ -32,7 +32,6 @@ class RecipesController < ApplicationController
     @foods = @recipe.foods
     @inventories = Inventory.all
   end
-  
 
   def public_list
     @public_recipes = Recipe.includes(:foods).where(public: true).order(created_at: :desc)

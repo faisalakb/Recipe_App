@@ -34,12 +34,12 @@ class FoodsController < ApplicationController
     # Ensure that the variables are not nil before using map
     @missing_foods_from_recipes = missing_foods_from_recipes || []
     @missing_foods_from_inventory = missing_foods_from_inventory || []
-  
-    @missing_foods = @missing_foods_from_recipes + @missing_foods_from_inventory  
+
+    @missing_foods = @missing_foods_from_recipes + @missing_foods_from_inventory
     @total_items = @missing_foods.count
     @total_price = @missing_foods.sum(&:price)
   end
-   
+
   def create
     @food = current_user.foods.new(food_params)
     if @food.save

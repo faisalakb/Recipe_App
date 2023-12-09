@@ -107,13 +107,10 @@ li {
   color: inherit;
 }
 
-.ft{
-
+.ft {
   display: flex;
-  
 }
 
-.totalFood{
+.totalFood {
   margin-left: auto;
 }
-

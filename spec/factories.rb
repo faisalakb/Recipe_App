@@ -13,4 +13,9 @@ FactoryBot.define do
     sequence(:email) { |n| "john#{n}@example.com" }
     password { 'password' }
   end
+
+  factory :recipe do
+    name { 'Example Recipe' }
+    description { 'Example Description' }
+  end
 end

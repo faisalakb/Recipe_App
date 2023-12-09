@@ -26,17 +26,26 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_143428) do
 
   create_table "inventories", force: :cascade do |t|
     t.string "name"
+<<<<<<< HEAD
+    t.bigint "user_id", null: false
+=======
     t.string "description"
     t.bigint "users_id", null: false
+>>>>>>> dev
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_inventories_on_users_id"
+    t.index ["user_id"], name: "index_inventories_on_user_id"
   end
 
   create_table "inventory_foods", force: :cascade do |t|
     t.integer "quantity"
+<<<<<<< HEAD
+    t.bigint "inventory_id", null: false
+    t.bigint "food_id", null: false
+=======
     t.bigint "inventory_id"
     t.bigint "food_id"
+>>>>>>> dev
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_inventory_foods_on_food_id"
@@ -76,15 +85,22 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_143428) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "password_digest"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
+  add_foreign_key "inventories", "users"
+  add_foreign_key "inventory_foods", "foods"
+  add_foreign_key "inventory_foods", "inventories"
+=======
   add_foreign_key "inventories", "users", column: "users_id"
   add_foreign_key "inventory_foods", "foods"
   add_foreign_key "inventory_foods", "inventories"
   add_foreign_key "recipe_foods", "foods"
   add_foreign_key "recipe_foods", "recipes"
+>>>>>>> dev
   add_foreign_key "recipes", "users"
 end

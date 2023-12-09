@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '2.7.6'
 
+gem 'factory_bot_rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.2'
 
@@ -64,6 +66,9 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
+
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'

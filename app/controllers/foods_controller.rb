@@ -31,10 +31,17 @@ class FoodsController < ApplicationController
     food_ids_from_inventory = inventory_foods.flat_map { |inv_food| inv_food.food.id }
     missing_foods_from_recipes = current_user.foods.where.not(id: food_ids_from_recipes)
     missing_foods_from_inventory = current_user.foods.where.not(id: food_ids_from_inventory)
-    @missing_foods = missing_foods_from_recipes + missing_foods_from_inventory  
+  
+
+    # Ensure that the variables are not nil before using map
+    @missing_foods_from_recipes = missing_foods_from_recipes || []
+    @missing_foods_from_inventory = missing_foods_from_inventory || []
+  
+    @missing_foods = @missing_foods_from_recipes + @missing_foods_from_inventory  
     @total_items = @missing_foods.count
     @total_price = @missing_foods.sum(&:price)
   end
+  
       
   def create
     @food = current_user.foods.new(food_params)

@@ -4,7 +4,6 @@ class CreateInventories < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :description
       t.references :users, null: false, foreign_key: true
-
       t.timestamps
     end
   end

@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.includes(:foods)
     @foods = Food.all
   end
 
@@ -30,7 +30,29 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     @foods = @recipe.foods
+    Rails.logger.debug("Foods: #{@foods.inspect}")
+    @recipe_food = RecipeFood.new # Added for the form to add new food
   end
+
+  # Modified create action to handle adding food to a recipe
+  def add_food
+    @recipe = Recipe.find(params[:id])
+    @food = Food.find(params[:recipe_food][:food_id])
+    quantity = params[:recipe_food][:quantity]
+  
+    @recipe_food = @recipe.recipe_foods.build(food: @food, quantity: quantity)
+  
+    respond_to do |format|
+      if @recipe_food.save
+        format.html { redirect_to @recipe, notice: 'Food was successfully added to the recipe.' }
+        format.js   # Add this line to handle AJAX response
+      else
+        format.html { render 'show' }
+        format.js   # Add this line to handle AJAX response
+      end
+    end
+  end
+  
 
   def public_list
     @public_recipes = Recipe.where(public: true).order(created_at: :desc)

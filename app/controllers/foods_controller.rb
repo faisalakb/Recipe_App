@@ -2,7 +2,7 @@ class FoodsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @foods = current_user.foods
+    @foods = current_user.foods.includes(:recipes)
   end
 
   def show
@@ -10,7 +10,7 @@ class FoodsController < ApplicationController
       missing_foods
       render :missing_foods
     else
-      @food = Food.find(params[:id])
+      @food = Food.find_by(id: params[:id])
     end
   end
 
@@ -34,12 +34,18 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food = Food.find(params[:id])
+    begin
+      @food = Food.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to foods_path, alert: 'Food not found.'
+      return
+    end
+    
     if current_user == @food.user
       @food.destroy
       redirect_to foods_path, notice: 'Food was successfully deleted.'
     else
-      redirect_to foods_path, alert: 'You are not authorized to delete this food.'
+      redirect_to foods_path, alert: 'Food not found or you are not authorized to delete it.'
     end
   end
 

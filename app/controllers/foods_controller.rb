@@ -25,21 +25,17 @@ class FoodsController < ApplicationController
   end
 
   def missing_foods
-    # Preload the foods association for current_user.recipes
     recipes_with_foods = current_user.recipes.includes(:foods)
-
-    # Extract all food_ids from recipes
     food_ids_from_recipes = recipes_with_foods.flat_map { |recipe| recipe.foods.pluck(:id) }
-
-    # Find missing foods that are not present in recipes
-    @missing_foods = current_user.foods.where.not(id: food_ids_from_recipes)
-
-    # Find missing foods that are not present in inventory
-    @missing_foods = @missing_foods.where.not(id: current_user.inventories.inventory_foods.pluck(:id))
+    inventory_foods = current_user.inventories.flat_map { |inventory| inventory.inventory_foods.includes(:food) }
+    food_ids_from_inventory = inventory_foods.flat_map { |inv_food| inv_food.food.id }
+    missing_foods_from_recipes = current_user.foods.where.not(id: food_ids_from_recipes)
+    missing_foods_from_inventory = current_user.foods.where.not(id: food_ids_from_inventory)
+    @missing_foods = missing_foods_from_recipes + missing_foods_from_inventory  
     @total_items = @missing_foods.count
     @total_price = @missing_foods.sum(&:price)
   end
-
+      
   def create
     @food = current_user.foods.new(food_params)
     if @food.save

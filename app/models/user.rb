@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
   has_many :foods, foreign_key: 'user_id'
   has_many :recipes, dependent: :destroy
-  has_many :inventories, foreign_key: 'user_id'
+  has_many :inventories, foreign_key: 'users_id'
 end

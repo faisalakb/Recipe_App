@@ -2,6 +2,8 @@
     <h1>Shopping List</h1>
     <div class="mf-head-values">
       <p>Amount of food items to buy: <%= @total_items %></p>
+      <p>Recipe: <%= @missing_foods_from_recipes %></p>
+      <p>Inventory: <%= @missing_foods_from_inventory %></p>
       <p>Total value of food needed: <%= number_to_currency(@total_price) %></p>
     </div>
 

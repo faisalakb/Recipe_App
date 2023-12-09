@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   root to: 'foods#index'
+  get '/missing_foods', to: 'foods#missing_foods'
   get '/foods', to: 'foods#index', as: 'foods'
   # root to: 'recipes#index'
 

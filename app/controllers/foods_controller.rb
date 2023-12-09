@@ -3,7 +3,6 @@ class FoodsController < ApplicationController
 
   def index
     @is_active = true
-    # @foods = current_user.foods
     if params[:id] == 'missing_foods'
       missing_foods
       render :missing_foods

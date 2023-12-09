@@ -1,10 +1,15 @@
 <div class="mf-container">
     <h1>Shopping List</h1>
     <div class="mf-head-values">
-      <p>Amount of food items to buy: <%= @total_items %></p>
-      <p>Recipe: <%= @missing_foods_from_recipes %></p>
-      <p>Inventory: <%= @missing_foods_from_inventory %></p>
-      <p>Total value of food needed: <%= number_to_currency(@total_price) %></p>
+      <div class="left">
+        <p>Amount of food items to buy: <%= @total_items %></p>
+        <p>Total value of food needed: <%= number_to_currency(@total_price) %></p>
+      </div>
+
+      <div class="right">
+        <p>Recipe: <%= @missing_foods_from_recipes %></p>
+        <p>Inventory: <%= @missing_foods_from_inventory %></p>
+      </div>
     </div>
 
     <table class="mf-table">

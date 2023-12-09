@@ -11,6 +11,9 @@
       </section>
 
       <section>
+      Recipe: <% @inventory.recipes.each do |recipe| %>
+        <%= recipe.name %>
+      <% end %>
       </section>
 
       <section>

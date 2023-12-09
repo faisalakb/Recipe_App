@@ -43,3 +43,12 @@
   text-decoration: none;
   color: #fff;
 }
+
+.link {
+  text-decoration: none;
+}
+
+.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}

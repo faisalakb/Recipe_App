@@ -19,7 +19,6 @@
   <div class="btnContainer">
     <button id="openPopup" class="btn btn-primary">Generate Shopping List</button>
 
-   
     <% if can? :update, @recipe %>
     
         <label for="click" class="addIng click-me">Add Food</label>
@@ -28,64 +27,25 @@
   </div>
   <hr>
 
-  
-
- <table class="table">
-  <thead>
-    <tr>
-      <th>Food</th>
-      <th>Measurement Unit</th>
-      <th>Unit Price</th>
-      <th>Quantity</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @foods.present? %>
-      <% @foods.each do |food| %>
-        <tr>
-          <td><%= food.name %></td>
-          <td><%= food.measurement_unit %></td>
-          <td><%= number_to_currency(food.price) %></td>
-          <td><%= food.quantity %></td>
-          <td>
-            <% if current_user == food.user %>
-              <%= link_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure you want to delete #{food.name} from the database?" } %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    <% else %>
-      <tr>
-        <td colspan="5">No foods available.</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-
-<% if @recipe %>
-  <table class="recipe-detail-table">
-    <!-- recipe details table -->
-  </table>
-<% else %>
-  <p class="private-recipe-message">This recipe is private and cannot be viewed.</p>
-<% end %>
-
-
+   <%= render partial: 'common_features/addFood', locals: { recipe: @recipe } %>
 
 
 <div class="bd" id="popup" style="display: none;">
   <h2>Generating Shopping List</h2>
-  <p>Choose an inventory:</p>
-  <select id="inventorySelect">
-    <option value="inventory1">Inventory 1</option>
-    <option value="inventory2">Inventory 2</option>
-    <option value="inventory3">Inventory 3</option>
-  </select>
-  <button onclick="generateShoppingList()">Generate</button>
+  <%= form_tag associate_inventory_recipe_path(@recipe), method: :post do %>
+    <p>Choose an inventory:</p>
+
+    <% if @inventories.any? %>
+      <%= select_tag 'inventory_id', options_for_select(@inventories.map { |inv| [inv.name, inv.id] }), include_blank: true %>
+    <% else %>
+    'no inventories found'
+    <% end %>
+    <%= submit_tag 'Generate Shopping List' %>
+  <% end %>
+
   <button id="closePopup" class="close">&times;</button>
 </div>
+
 
 <script>
   $(document).ready(function() {

@@ -7,8 +7,8 @@ RSpec.describe 'recipes/index', type: :view do
   include CanCan::Ability
 
   let(:user) { FactoryBot.create(:user) }
-  let(:foods) { FactoryBot.create_list(:food, 3, user: user) }
-  let(:recipes) { FactoryBot.create_list(:recipe, 3, user: user, foods: foods) }
+  let(:foods) { FactoryBot.create_list(:food, 3, user:) }
+  let(:recipes) { FactoryBot.create_list(:recipe, 3, user:, foods:) }
 
   before do
     assign(:recipes, recipes)

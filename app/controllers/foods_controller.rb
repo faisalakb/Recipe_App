@@ -3,7 +3,6 @@ class FoodsController < ApplicationController
 
   def index
     @is_active = true
-    # @foods = current_user.foods
     if params[:id] == 'missing_foods'
       missing_foods
       render :missing_foods
@@ -35,6 +34,8 @@ class FoodsController < ApplicationController
     # Find missing foods that are not present in recipes
     @missing_foods = current_user.foods.where.not(id: food_ids_from_recipes)
 
+    # Find missing foods that are not present in inventory
+    @missing_foods = @missing_foods.where.not(id: current_user.inventories.inventory_foods.pluck(:id))
     @total_items = @missing_foods.count
     @total_price = @missing_foods.sum(&:price)
   end

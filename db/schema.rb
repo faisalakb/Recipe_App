@@ -35,8 +35,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_152843) do
 
   create_table "inventory_foods", force: :cascade do |t|
     t.integer "quantity"
-    t.bigint "inventory_id"
-    t.bigint "food_id"
+    t.bigint "inventory_id", null: false
+    t.bigint "food_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_inventory_foods_on_food_id"
@@ -84,8 +84,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_152843) do
   end
 
   add_foreign_key "inventories", "users", column: "users_id"
-  add_foreign_key "inventory_foods", "foods"
-  add_foreign_key "inventory_foods", "inventories"
   add_foreign_key "recipe_foods", "foods"
   add_foreign_key "recipe_foods", "recipes"
   add_foreign_key "recipes", "inventories"

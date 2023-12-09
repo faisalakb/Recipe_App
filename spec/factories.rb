@@ -19,4 +19,10 @@ FactoryBot.define do
     name { 'Example Recipe' }
     description { 'Example Description' }
   end
+
+  factory :inventory do
+    name { Faker::Lorem.word }
+    description { Faker::Lorem.sentence }
+    association :user, factory: :user
+  end
 end

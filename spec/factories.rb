@@ -24,5 +24,4 @@ FactoryBot.define do
     description { Faker::Lorem.sentence }
     association :user, factory: :user
   end
-
 end

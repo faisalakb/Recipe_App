@@ -12,12 +12,10 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
   
   root to: 'foods#index'
   get '/missing_foods', to: 'foods#missing_foods'
   get '/foods', to: 'foods#index', as: 'foods'
-  # root to: 'recipes#index'
 
   get '/foods/:id', to: 'foods#show', as: 'food'
   get '/generalshoppinglist', to: 'generalshoppinglist#index'

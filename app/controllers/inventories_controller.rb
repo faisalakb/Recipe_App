@@ -1,5 +1,5 @@
 class InventoriesController < ApplicationController
-  before_action :validate_user, :set_inventory, only: %i[edit update destroy]
+  before_action :set_inventory, only: %i[edit update destroy]
 
   def index
     @inventories = Inventory.all

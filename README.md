@@ -135,7 +135,6 @@ You can deploy this project using:
 👤 **Kudzai Munyaradzi Sungai**
 
 * GitHub: [@paulshaun-kdtk](https://github.com/paulshaun-kdtk)
-* Twitter: [@paulshaun](https://twitter.com/shaun_s_kdtk)
 * LinkedIn: [LinkedIn](https://www.linkedin.com/in/shaun-sungai-b54339263/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

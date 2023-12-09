@@ -20,55 +20,14 @@
     <button id="openPopup" class="btn btn-primary">Generate Shopping List</button>
 
     <% if can? :update, @recipe %>
-      <button class="btn btn-primary addIng">
-        <%= link_to "Add ingredient", new_recipe_path(@recipe), class: "custom-link" %>
-      </button>
+    
+        <label for="click" class="addIng click-me">Add Food</label>
+
     <% end %>
   </div>
   <hr>
 
- <table class="table">
-  <thead>
-    <tr>
-      <th>Food</th>
-      <th>Measurement Unit</th>
-      <th>Unit Price</th>
-      <th>Quantity</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% if @foods.present? %>
-      <% @foods.each do |food| %>
-        <tr>
-          <td><%= food.name %></td>
-          <td><%= food.measurement_unit %></td>
-          <td><%= number_to_currency(food.price) %></td>
-          <td><%= food.quantity %></td>
-          <td>
-            <% if current_user == food.user %>
-              <%= link_to "Delete", food_path(food), method: :delete, data: { confirm: "Are you sure you want to delete #{food.name} from the database?" } %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    <% else %>
-      <tr>
-        <td colspan="5">No foods available.</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-
-<% if @recipe %>
-  <table class="recipe-detail-table">
-    <!-- recipe details table -->
-  </table>
-<% else %>
-  <p class="private-recipe-message">This recipe is private and cannot be viewed.</p>
-<% end %>
-
+   <%= render partial: 'common_features/addFood', locals: { recipe: @recipe } %>
 
 
 <div class="bd" id="popup" style="display: none;">

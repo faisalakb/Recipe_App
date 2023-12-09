@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+<<<<<<< HEAD
   resources :recipes, only: [:index, :show, :new, :create, :destroy] do
     post 'associate_inventory', on: :member
   end
+=======
+  resources :recipes, only: [:index, :show, :new, :create, :destroy]
+  resources :recipe_foods, only: [:index, :create]
+>>>>>>> dev
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get "up" => "rails/health#show", as: :rails_health_check
@@ -11,7 +16,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   
   root to: 'foods#index'
-
+  get '/missing_foods', to: 'foods#missing_foods'
+  get '/foods', to: 'foods#index', as: 'foods'
   # root to: 'recipes#index'
 
   get '/foods/:id', to: 'foods#show', as: 'food'

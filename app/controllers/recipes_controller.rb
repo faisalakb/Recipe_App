@@ -2,8 +2,19 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def index
-    @recipes = Recipe.includes(:foods).all
-    @foods = Food.all
+    @public_recipes = Recipe.where(public: true).includes(recipe_foods: :food)
+
+    if @public_recipes.present?
+      @total_food_items = @public_recipes.sum { |recipe| recipe.recipe_foods.sum(:quantity) } || 0
+      @total_price = @public_recipes.sum { |recipe| recipe.recipe_foods.sum { |rf| rf.quantity * rf.food.price } } || 0
+    else
+      @total_food_items = 0
+      @total_price = 0
+    end
+
+    # Debug output
+    puts "Total Food Items: #{@total_food_items}"
+    puts "Total Price: #{@total_price}"
   end
 
   def new
@@ -32,10 +43,20 @@ class RecipesController < ApplicationController
     @foods = @recipe.foods
     @inventories = Inventory.all
   end
-  
 
   def public_list
     @public_recipes = Recipe.includes(:foods).where(public: true).order(created_at: :desc)
+
+    # Debug output
+    puts "Debug - Public Recipes: #{@public_recipes.inspect}"
+
+    if @public_recipes.present?
+      @total_food_items = @public_recipes.sum { |recipe| recipe.recipe_foods.sum(:quantity) } || 0
+      @total_price = @public_recipes.sum { |recipe| recipe.recipe_foods.sum { |rf| rf.quantity * rf.food.price } } || 0
+    else
+      @total_food_items = 0
+      @total_price = 0
+    end
   end
 
   private

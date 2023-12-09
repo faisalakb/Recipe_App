@@ -106,14 +106,13 @@ li {
   text-decoration: none;
   color: inherit;
 }
-<<<<<<< HEAD
 
-.mid-sec {
+.ft{
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 10px;
+  
 }
-=======
->>>>>>> dev
+
+.totalFood{
+  margin-left: auto;
+}

@@ -43,7 +43,7 @@ class InventoriesController < ApplicationController
   private
 
   def validate_user
-    return if @inventory && (current_user.id == @inventory.user_id || current_user.admin?)
+    return if @inventory && (current_user.id == @inventory.users_id || current_user.admin?)
 
     flash[:alert] = 'You do not have permission to delete this item.'
     redirect_back fallback_location: root_path

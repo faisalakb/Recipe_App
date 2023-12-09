@@ -22,7 +22,7 @@ class RecipeFoodsController < ApplicationController
 
   def find_recipe_and_food
     @recipe = Recipe.find(params[:recipe_id])
-    @food = Food.find(params[:food_id])
+    @food = Food.find(params[:recipe_food][:food_id]) # Update this line
   end
 
   def check_permissions
@@ -30,5 +30,9 @@ class RecipeFoodsController < ApplicationController
 
     flash[:error] = 'Permission denied.'
     redirect_to @recipe
+  end
+
+  def recipe_food_params
+    params.require(:recipe_food).permit(:quantity, :food_id)
   end
 end

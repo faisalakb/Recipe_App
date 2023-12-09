@@ -107,10 +107,12 @@ li {
   color: inherit;
 }
 
-.mid-sec {
+.ft{
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 10px;
+  
+}
+
+.totalFood{
+  margin-left: auto;
 }

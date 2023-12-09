@@ -12,6 +12,7 @@ FactoryBot.define do
     name { 'John Doe' }
     sequence(:email) { |n| "john#{n}@example.com" }
     password { 'password' }
+    admin { false }
   end
 
   factory :recipe do

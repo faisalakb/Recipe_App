@@ -30,7 +30,9 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.includes(:foods).find(params[:id])
     @foods = @recipe.foods
+    @inventories = Inventory.all
   end
+  
 
   def public_list
     @public_recipes = Recipe.includes(:foods).where(public: true).order(created_at: :desc)

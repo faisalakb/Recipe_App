@@ -33,6 +33,19 @@ class RecipesController < ApplicationController
     @inventories = Inventory.all
   end
 
+  def associate_inventory
+    @recipe = Recipe.find(params[:id])
+    inventory_id = params[:inventory_id]
+
+    if inventory_id.present?
+      inventory = Inventory.find(inventory_id)
+      @recipe.update(inventory:)
+      redirect_to inventory_path(inventory), notice: 'Inventory generated successfully!'
+    else
+      redirect_to @recipe, alert: 'Please select an inventory.'
+    end
+  end
+
   def public_list
     @public_recipes = Recipe.includes(:foods).where(public: true).order(created_at: :desc)
   end

@@ -11,7 +11,6 @@
       </section>
 
       <section>
-      Inventory Recipe:  </span>
       </section>
 
       <section>
@@ -37,7 +36,7 @@
         <% @inventory.inventory_foods.each do |inventory_food| %> 
           <tr>
             <td><%= inventory_food.food.name %></td>
-            <td><%= inventory_food.food.quantity %></td>
+            <td><%= inventory_food.quantity %></td>
             <td> $ <%= inventory_food.food.price %></td>
           </tr>
         <% end %>

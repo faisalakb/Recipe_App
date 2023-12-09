@@ -1,5 +1,6 @@
 <div class="mf-container">
     <h1>Shopping List</h1>
+
     <div class="mf-head-values">
       <div class="left">
         <p>Amount of food items to buy: <%= @total_items %></p>
@@ -7,8 +8,8 @@
       </div>
 
       <div class="right">
-        <p>Recipe: <%= @missing_foods_from_recipes %></p>
-        <p>Inventory: <%= @missing_foods_from_inventory %></p>
+        <p>Recipe: <%= @missing_foods_from_recipes.first&.name %></p>
+        <p>Inventory: <%= @missing_foods_from_inventory.first&.name %> </p>      
       </div>
     </div>
 

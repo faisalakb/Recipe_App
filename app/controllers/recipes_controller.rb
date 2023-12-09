@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:foods).all
     @foods = Food.all
   end
 
@@ -28,12 +28,12 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.includes(:foods).find(params[:id])
     @foods = @recipe.foods
   end
 
   def public_list
-    @public_recipes = Recipe.where(public: true).order(created_at: :desc)
+    @public_recipes = Recipe.includes(:foods).where(public: true).order(created_at: :desc)
   end
 
   private
